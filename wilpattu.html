@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilpattu National Park</title>
+
+    <!--- Social Media Icons Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Add Favicon -->
+    <link rel="icon" href="./Images/logoico.ico" type="icon/ico">
+    <link rel="shortcut icon" href="./Images/logoico.ico" type="icon/ico">
+
+    <link href="./wilpattu.css" rel="stylesheet">
+</head>
+<body>
+
+    <header id="header">
+        <!--adding the logo-->
+      
+       <!--Navigation Bar--> 
+       <section class="logo">
+           <a href="./index.html"><img class="logo" src="./Images/logopng-removebg.png" alt="w-logo" width="100px"></a>
+       </section>
+       
+       <nav>
+        <ul class="navlinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="introduction.html">Sri Lankan Wildlife Introduction</a></li>
+            <li><a href="department.html">Department of Wildlife Conservation</a></li>
+            <li><a href="sl_leopard.html">Sri Lankan Leopards</a></li>
+            <li><a href="animals_in_srilanka.html">Animals in Sri Lanka</a></li>
+        </ul>
+    </nav>
+    <a class="contact" a href="contact.html" ><button>Contact Us</button></a>
+        <section class="menubtn">
+            <input type="checkbox" role="button" aria-label="Display The Menu" class="menu">
+        </section>
+        <section class="dropdown_menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="introduction.html">Sri Lankan Wildlife Introduction</a></li>
+            <li><a href="department.html">Department of Wildlife Conservation</a></li>
+            <li><a href="sl_leopard.html">Sri Lankan Leopards</a></li>
+            <li><a href="animals_in_srilanka.html">Animals in Sri Lanka</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </section>
+           <script>
+               const menu_btn = document.querySelector('.menubtn')
+               const menubtnICON = document.querySelector('.menu_btn input')
+               const dropmenu = document.querySelector('.dropdown_menu')
+    
+               menu_btn.onclick = function(){
+                   dropmenu.classList.toggle('open')
+                   const isOpen = dropmenu.classList.contains('open')
+               }
+           </script>
+      </header>
+
+<main>
+
+<!-- Hero Banner -->
+<section class="banner-wilpattu">
+    <section class="banner-content">
+        <h1>Wilpattu National Park</h1>
+    </section>
+</section>
+
+<section class="history">
+    <h1 id="wilpattu-title">Unveiling the Past: Wilpattu National Park's Rich History</h1>
+     
+    <p>Nestled within the verdant expanse of the Puttalam and Anuradhapura districts, Wilpattu National Park (WNP) stands as Sri Lanka's largest and one of its oldest 
+        protected areas, encompassing 131 thousand hectares of diverse landscapes. Established between 1938 and 1973 under the Fauna and Flora Protection Ordinance, this 
+        wilderness marvel is a crucial sanctuary for elephants, a habitat for the elusive Sri Lankan leopard, and a haven for the sloth bear. Distinguished by its dense forest 
+        cover, WNP unveils a tapestry of dry zone forests, thorny scrub, open plains, and the unique Villu wetlands. Reddish cliffs rising dramatically from 
+        the shores of Portugal Bay and Dutch Bay add a captivating dimension to the scenery. In proximity to the ancient city of Anuradhapura, the park boasts 
+        ancient ruins and artifacts, echoing the historical resonance of the region. Recognized as a wetland of international importance under the Ramsar Convention in 2013, 
+        WNP, along with adjacent marine wetlands, estuaries, and reservoirs, spans 165,800 hectares, making it a vital component of this ecological haven known as the 
+        "Land of Villu" ; a name derived from the basin-shaped lakes, or Villus, scattered throughout its terrain. Covering almost 2% of Sri Lanka's total land area, 
+        Wilpattu National Park embodies a rich history, initially declared a Reserved Forest in 1903 and later designated as a game sanctuary in 1905 to safeguard wildlife 
+        from hunting.</p>
+
+        <ul>
+            <li><strong>Location:</strong> Wilpattu National Park is nestled in the northern regions of Sri Lanka, spanning the Puttalam and Anuradhapura districts and bordering Mannar and Vavuniya Districts. Encompassing an expansive 131,000 hectares, it stands as the country's largest and one of its oldest protected areas.</li><br>
+            <li><strong>Historical Significance:</strong> Established between 1938 and 1973 under the Fauna and Flora Protection Ordinance, Wilpattu National Park holds historical roots dating back to 1903 when part of it was initially declared a Reserved Forest. Evolving from a hunting ground for the elite during British rule, the park has undergone a remarkable transformation into a vital conservation area, embodying a shift in societal attitudes towards the preservation of its rich wildlife.</li><br>
+            <li><strong>Optimal Visiting Period:</strong> The recommended time to explore Wilpattu National Park is between February and July. This period offers an optimal experience for visitors as lower water levels encourage wildlife to emerge into open areas, enhancing the chances of encountering the park's diverse inhabitants, including elephants, Sri Lankan leopards, and sloth bears.</li><br>
+        </ul>
+          
+</section>
+
+<h2 id="wilpattu-img-title">Images from the Wonders of Wilpattu National Park</h2>
+    <h3 id="wilpattu-img-subtitle">Some animals that are often seen in Wilpattu National Park include:</h3>
+<section class="wilpattu-subimgs">
+    <img src="./Images/wilpattu-01.jpg" alt="Wilpattu SubImg 1">
+    <img src="./Images/wilpattu-02.jpg" alt="Wilpattu SubImg 2">
+    <img src="./Images/wilpattu-03.jpeg" alt="Wilpattu SubImg 3">
+</section>
+
+<section class="main-animalbox">
+<section class="animal-box">
+    <h2>Sambar Deer <br><i>(Rusa unicolor)</i></h2>
+    <p>
+        The Sambar deer is a majestic creature with a lifespan ranging from 15 to 20 years. Found in diverse habitats such as forests, grasslands, and swamps, 
+        these elegant herbivores graze on a diet comprising leaves, grass, and various plants. Recognized for their striking and robust antlers, Sambar deer add a 
+        touch of grace to their natural surroundings. Observing these enchanting creatures in their native habitats provides a captivating glimpse into the beauty of 
+        the animal kingdom.
+    </p>
+</section>
+
+<section class="animal-box">
+    <h2>Sri Lankan Leopard <br><i>(Panthera pardus kotiya)</i></h2>
+    <p>
+        The Sri Lankan Leopard, a captivating and elusive feline, boasts a lifespan of around 12-15 years in the wild. Thriving in diverse environments such as forests, 
+        grasslands, and rocky terrains, these agile predators feed on a variety of prey, including deer, wild boars, and smaller mammals. Adorned with a distinctive golden 
+        coat adorned with striking rosettes, Sri Lankan Leopards are a symbol of grace and power in the wilderness. Observing these magnificent big cats in their natural 
+        habitat provides a thrilling glimpse into the untamed beauty of Sri Lanka's wildlife.
+    </p>
+</section>
+
+<section class="animal-box">
+    <h2>Sri Lankan Elephant <br><i>(Elephas maximus maximus)</i></h2>
+    <p>
+        The Sri Lankan Elephant, a majestic and revered species, boasts a remarkable lifespan of 60 to 75 years. Inhabiting a variety of landscapes including forests, 
+        grasslands, and wetlands, these gentle giants graze on an assortment of vegetation, ranging from grasses and leaves to fruits and bark. Known for their impressive 
+        tusks and distinctively large ears, Sri Lankan Elephants command attention with their sheer size and majestic presence.
+        These magnificent creatures play a vital role in the island's ecosystem, shaping the landscape and contributing to the biodiversity of their habitats. 
+        The sight of a Sri Lankan Elephant moving gracefully through the wilderness is a testament to the rich natural heritage of the region. Preserving their 
+        habitats and ensuring their well-being is crucial for maintaining the delicate balance of Sri Lanka's ecosystems and conserving the awe-inspiring legacy of the 
+        Sri Lankan Elephant.
+    </p>
+</section>
+</section>
+
+<!--- Visit Yala --->
+
+<section class="parks-btn">
+    <a href="./yala.html" class="parks-glow-btn">Visit Yala (CSS1)</a>
+</section>
+
+</main>
+    
+<!-- Footer -->  
+
+<footer>
+    <section class="footer">
+        <section class="row-socials">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook-square"></i></a>
+
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i></a>
+
+            <a href="https://www.x.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-square-x-twitter"></i></a>
+
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i></a>
+        </section>
+        
+        <section class="row-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services">Our Services</a></li>
+                <li><a href="department.html">About Us</a></li>
+                <li><a href="tos">Terms & Conditions</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </section>
+        
+        <section class="row">
+            &copy; 2023 Wildlife in Sri Lanka. All rights reserved. 
+        </section>
+    </section>
+</footer>
+
+</body>
+</html>

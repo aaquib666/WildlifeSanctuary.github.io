@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Lankan Leopard</title>
+
+    <!--- Social Media Icons Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Add Favicon -->
+    <link rel="icon" href="./Images/logoico.ico" type="icon/ico">
+    <link rel="shortcut icon" href="./Images/logoico.ico" type="icon/ico">
+
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <header id="header">
+        <!--adding the logo-->
+      
+       <!--Navigation Bar--> 
+       <section class="logo">
+           <a href="./index.html"><img class="logo" src="./Images/logopng-removebg.png" alt="w-logo" width="100px"></a>
+       </section>
+       
+       <nav>
+        <ul class="navlinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="introduction.html">Sri Lankan Wildlife Introduction</a></li>
+            <li><a href="department.html">Department of Wildlife Conservation</a></li>
+            <li><a href="sl_leopard.html">Sri Lankan Leopards</a></li>
+            <li><a href="animals_in_srilanka.html">Animals in Sri Lanka</a></li>
+        </ul>
+    </nav>
+    <a class="contact" a href="contact.html" ><button>Contact Us</button></a>
+        <section class="menubtn">
+            <input type="checkbox" role="button" aria-label="Display The Menu" class="menu">
+        </section>
+        <section class="dropdown_menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="introduction.html">Sri Lankan Wildlife Introduction</a></li>
+            <li><a href="department.html">Department of Wildlife Conservation</a></li>
+            <li><a href="sl_leopard.html">Sri Lankan Leopards</a></li>
+            <li><a href="animals_in_srilanka.html">Animals in Sri Lanka</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </section>
+           <script>
+               const menu_btn = document.querySelector('.menubtn')
+               const menubtnICON = document.querySelector('.menu_btn input')
+               const dropmenu = document.querySelector('.dropdown_menu')
+    
+               menu_btn.onclick = function(){
+                   dropmenu.classList.toggle('open')
+                   const isOpen = dropmenu.classList.contains('open')
+               }
+           </script>
+      </header>
+
+<main>
+
+    <!-- Hero Banner -->
+<section class="banner-leopard">
+    <section class="banner-leopard">
+        <h1>Sri Lankan Leopard: Stealth and Splendor</h1>
+    </section>
+</section>
+    
+<!--- 3 Venues where leopards are found in Sri Lanka --->
+
+<section class="venues-notes">
+<h1>Yala National Park</h1>
+  <section>
+    <p>
+        Yala National Park, undoubtedly the crown jewel of safari parks in Sri Lanka, stands out as the top spot for wildlife enthusiasts, 
+        particularly those captivated by the elusive leopards. Recognized globally for its exceptionally high densities of these magnificent predators, 
+        Yala offers an unparalleled safari experience in the heart of its pristine wilderness.
+        The park's reputation as the land of the leopard is well-deserved, with sightings of these beautiful cats strolling across open plains or perched atop rocky outcrops being signature experiences. 
+        Yala has been home to iconic leopards, such as the legendary "Chaitya Male" and Hamu, known for their strength and prowess. Currently, 
+        ongoing studies have identified over 130 individual leopards within the park's relatively small area of 142 square kilometers. Notably, 
+        new individuals continue to be identified, emphasizing the remarkable density of leopards in this wildlife haven.
+        Some of the prominent leopard personalities in the present era include Lucas, Julius, Harak Hora, and Aster. 
+        Visitors to Yala National Park have the opportunity to delve deeper into the world of leopards at the informative "Leopard Center" within the park. Here, 
+        they can enhance their understanding of these predators, compare their own sightings with a virtual database, and even attempt to identify the leopards they encounter during their safari adventures.
+        As you embark on a safari through Yala National Park, be prepared to witness the sleek and stealthy movements of leopards, 
+        creating unforgettable moments in a sanctuary where the connection between these graceful creatures and their diverse natural habitat is truly awe-inspiring.
+    </p>
+  </section>
+
+  <h1>Wilpattu National Park</h1>
+  <section>
+    <p>
+        Wilpattu National Park, Sri Lanka's largest sanctuary located on the North-Western end of the island. 
+        Contrasting with Yala, Wilpattu's landscape is dominated by dense dark forests and natural lakes called Villus.
+        Within this pristine reserve, a thriving population of majestic leopards roams, offering rare glimpses into their natural behaviors. 
+        Though sightings are challenging in the dense forests, the reward is immense when these elusive predators grace the roads or the open sand-rimmed lakes.
+        Closed during the civil war, Wilpattu opened to the public in 2010. 
+        Over time, habituated leopards have made the park increasingly popular among wildlife enthusiasts seeking a quieter experience than Yala.
+        Notable leopards include "Prince" or "Natta," once the most photographed leopard in Sri Lanka, and the fearless Nelum Wila Male, a star of the park. 
+        Among females, "Cleopatra," a playful cub turned successful mother, captivates lucky visitors in the Mahapatessa area.
+        Wilpattu National Park promises not only thrilling leopard encounters but also the rich stories and personalities defining life in this untamed wilderness.
+    </p>
+  </section>
+
+  <h1>Kumana National Park</h1>
+  <section>
+    <p>
+        Kumana National Park, an enchanting realm of mystery and wonder nestled on the far eastern corner of the island. 
+        Connected to Yala and part of the same ecosystem, Kumana offers a unique and secluded experience for nature enthusiasts. 
+        A leisurely drive, albeit a lengthy one, leads you to this captivating sanctuary, 
+        which was initially renowned as a bird haven with numerous species nesting in the waters of Kumana Villu. 
+        However, in the last decade, the park has witnessed a surge in leopard sightings, adding an exciting dimension to its allure.
+        Legend has it that the leopards of Kumana are dubbed "man-eaters," with the leopards of Lenama, 
+        an area within the park, acquiring mythical status for their supposed larger and deadlier nature. 
+        In reality, these leopards are the same magnificent creatures found in Yala. The park has experienced a few unfortunate incidents, 
+        such as a construction worker being taken and eaten by a large male leopard in 2019. Subsequently, 
+        another leopard attacked a farmer in Panama, resulting in a fatality. Despite these isolated cases, 
+        the allure of spotting leopards in Kumana continues to grow, as the animals become more accustomed to their surroundings.
+        What sets Kumana apart is its serene ambiance, offering a level of privacy and escape from large crowds. 
+        The park's remoteness, coupled with its challenging accessibility, has transformed it into one of Sri Lanka's best-kept secrets. 
+        As you embark on a safari through Kumana, be prepared for an unparalleled wildlife encounter, where the elusive leopards gracefully roam in the shadows, 
+        embodying the untamed beauty of this hidden gem.
+    </p>
+  </section>
+</section>
+
+<!--- Section 2 --->
+
+    <h1 id="section-2-title">Leopard Conservation Challenges in Sri Lanka</h1>
+<section class="section-2-leopards">
+    <h1>Threat 1: Illegal Killing for Body Parts</h1>
+
+    <img src="./Images/leopard-page1.jpg" alt="Illegal Killing for Body Parts">
+
+    <p>
+        The recent killing of a fully grown male Sri Lankan leopard at Uda Walawe National Park has raised concerns about the illegal hunting of leopards for their claws and teeth, threatening the already dwindling population. The consequences of this threat include a decline in the leopard population, which is estimated to be around 1,000 in Sri Lanka. The illegal trade in leopard body parts not only disrupts the ecosystem but also undermines conservation efforts.
+    </p>
+
+    <h2>Mechanisms to Reduce the Threat:</h2>
+
+    <ul>
+        <li>
+            <strong>Legal Protection:</strong>
+            <ul>
+                <li>The Sri Lankan leopard has been legally protected since 1964, with the last amendment in 2009 categorizing it as a "strictly protected species."</li>
+                <li>The law prohibits any harm, injury, or killing of leopards, along with the sale or trade of their body parts.</li>
+                <li>Offenses related to leopard protection are considered cognizable and non-bailable.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Enforcement Challenges:</strong>
+            <ul>
+                <li>Despite robust legal provisions, the Department of Wildlife Conservation (DWC) faces challenges in enforcement due to understaffing.</li>
+                <li>The DWC lacks the capacity to proactively protect species, and the police, who are also empowered, face issues related to expertise and training.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Capacity Building:</strong>
+            <ul>
+                <li>There is a need to address the capacity issues within the DWC, including more staffing and specialized training.</li>
+                <li>Training programs should cover areas such as genetic testing, animal forensic studies, and producing expert evidence during prosecution.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Expert Witnesses:</strong>
+            <ul>
+                <li>The 2009 amendment allows experienced DWC officers to become "expert witnesses" in prosecutions, emphasizing the need for additional training to maximize this provision.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h1>Threat 2: Lack of Comprehensive Conservation Plan</h1>
+
+    <img src="./Images/leopard-page2.jpg" alt="Lack of Comprehensive Conservation Plan">
+
+    <p>
+        The conservation and protection of leopards in Sri Lanka face challenges beyond illegal killing, including a lack of comprehensive planning and proactive measures. Despite the significance of leopards in the tourism sector, authorities have yet to develop a cohesive plan of action to safeguard the species for future generations.
+    </p>
+
+    <h2>Mechanisms to Reduce the Threat:</h2>
+
+    <ul>
+        <li>
+            <strong>Tourism Dimension:</strong>
+            <ul>
+                <li>A comprehensive plan should involve collaboration between wildlife authorities and tourism sectors to protect leopards and sustain wildlife tourism.</li>
+                <li>Considering the distribution of leopards across different zones, conservation actions should address populations both within and outside protected areas.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Population Conservation:</strong>
+            <ul>
+                <li>With fewer than 1,000 leopards remaining, urgent management actions are required to address intentional and accidental killings, as well as threats to the population's viability.</li>
+                <li>The plan should cover conservation and management actions for leopards in various ecological zones, including low-country wet and dry zones, and the hill country.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Endangered Status:</strong>
+            <ul>
+                <li>Recognizing the Sri Lankan leopard as an endemic subspecies on the brink of extinction, urgent conservation measures are crucial to prevent further decline.</li>
+                <li>The inclusion of the leopard in the National Red Data List highlights its threatened status within Sri Lanka, necessitating immediate intervention.</li>
+            </ul>
+        </li>
+    </ul>
+    </section>
+
+    <!--- Link  --->
+
+    <section id="link-leopardorg">
+        <a href="https://www.leopocon.org/"><h1>Dive Deeper: Visit the following website to delve into additional information on leopard conservation in Sri Lanka and learn about ways you can make a difference.<br>Click Here<br></h1></a>
+    </section>
+
+</main>
+
+<!-- Footer -->  
+
+<footer>
+    <section class="footer">
+        <section class="row-socials">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook-square"></i></a>
+
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i></a>
+
+            <a href="https://www.x.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-square-x-twitter"></i></a>
+
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i></a>
+        </section>
+        
+        <section class="row-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services">Our Services</a></li>
+                <li><a href="department.html">About Us</a></li>
+                <li><a href="tos">Terms & Conditions</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </section>
+        
+        <section class="row">
+            &copy; 2023 Wildlife in Sri Lanka. All rights reserved. 
+        </section>
+    </section>
+</footer>
+
+</body>
+</html>

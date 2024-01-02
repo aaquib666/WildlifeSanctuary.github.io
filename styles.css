@@ -1,0 +1,1783 @@
+@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* Favicon Stylings */
+link[rel="icon"],
+link[rel="shortcut icon"] {
+    border-radius: 50%;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-image: linear-gradient(to left, #FDF7E4, #FAEED1, #DED0B6, #BBAB8C);
+    box-sizing: border-box;
+}
+
+/* Additional Line Class */
+.line {
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 2px solid #000;
+}
+
+/* Navbar Styles */
+
+header {
+    margin: 0px;
+    background-color: #232023;
+    font-family: "Philosopher";
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        padding: 1%; /* Adjusted padding for smaller screens */
+    }
+
+    .navlinks li a {
+        padding: 5px;
+        font-size: 14px; /* Increased font size for better readability on smaller screens */
+    }
+
+    .navlinks li a:hover {
+        font-size: 16px; /* Increased font size on hover for better visibility */
+    }
+}
+
+.navlinks li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.navlinks li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    transition: all 0.3s ease 0s;
+}
+
+.navlinks li a:hover {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: #837b6b;
+    padding: 20px;
+    border: none;
+    font-size: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.navlinks li a:active {
+    background-color: #BBAB8C;
+    color: #ffffff;
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.contact button {
+    margin-left: 20px;
+    cursor: pointer;
+    background-color: #BBAB8C;
+    text-decoration: none;
+    border-radius: 20px;
+    font-family: "Philosopher";
+    font-size: 20px;
+    padding: 11px 15px 11px 15px;
+    border: none;
+    transition: all 0.3s ease 0s;
+    color: black;
+    margin-right: 10px;
+}
+
+.contact button:hover {
+    background-color: #837b6b;
+    font-family: "Philosopher";
+    font-size: 25px;
+    padding: 20px;
+    border-radius: 5px;
+    color: black;
+}
+
+/* Dropdown Menu */
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    height: 0;
+    background-color: #232023;
+    backdrop-filter: blur(15px);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+    margin-top: 5px;
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.dropdown_menu li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.dropdown_menu .contact button {
+    width: 100%;
+    padding: 2%;
+    margin: 0%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Hamburger Icon Styling */
+
+.menubtn {
+    display: none;
+    cursor: pointer;
+}
+
+.menu {
+    --s: 25px;
+    --c: rgb(255, 255, 255);
+
+    height: var(--s);
+    aspect-ratio: 1;
+    border: none;
+    padding: 0;
+    border-inline: calc(var(--s)/2) solid #0000;
+    box-sizing: content-box;
+    --_g1: linear-gradient(var(--c) 20%, #0000 0 80%, var(--c) 0)
+           no-repeat content-box border-box;
+    --_g2: radial-gradient(circle closest-side at 50% 12.5%, var(--c) 95%, #0000)
+           repeat-y content-box border-box;
+    background:
+      var(--_g2) left  var(--_p, 0px) top,
+      var(--_g1) left  calc(var(--s)/10 + var(--_p, 0px)) top,
+      var(--_g2) right var(--_p, 0px) top,
+      var(--_g1) right calc(var(--s)/10 + var(--_p, 0px)) top;
+    background-size:
+      20% 80%,
+      40% 100%;
+    position: relative;
+    clip-path: inset(0 25%);
+    cursor: pointer;
+    transition:
+      background-position .3s var(--_s, .3s),
+      clip-path 0s var(--_s, .6s);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.menu:before,
+.menu:after {
+    content: "";
+    position: absolute;
+    border-radius: var(--s);
+    inset: 40% 0;
+    background: var(--c);
+    transition: transform .3s calc(.3s - var(--_s, .3s));
+}
+
+.menu:checked {
+    clip-path: inset(0);
+    --_p: calc(-1*var(--s));
+    --_s: 0s;
+}
+
+.menu:checked:before {
+    transform: rotate(45deg);
+}
+
+.menu:checked:after {
+    transform: rotate(-45deg);
+}
+
+.menu:focus-visible {
+    clip-path: none;
+    border: none;
+    outline: 2px solid var(--c);
+    outline-offset: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+    .navlinks,
+    .contact button {
+        display: none;
+    }
+
+    .menubtn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+}
+
+/* Hero Banner */
+
+.hero-banner {
+    width: 100%;
+    height: 650px; /* Adjust the height as needed */
+    background-image: url(./Images/hero-banner.jpg);
+    background-position: center;
+    background-size: cover; /* Ensure the background covers the entire element */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Set text color to white or another suitable color */
+    text-align: center;
+}
+
+.hero-banner h1 {
+    font-size: 4.5em;
+    margin: 0;
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff; /* Set text color to white or another suitable color */
+}
+
+.hero-banner h1 {
+    font-size: 4.5em;
+    margin: 0;
+}
+
+.hero-banner h1:hover {
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+    transition: all 0.3s ease; /* Add a smooth transition effect */
+}
+
+@media only screen and (max-width: 1000px) {
+    .hero-banner {
+        height: 500px; /* Adjust height as needed for medium screens */
+    }
+
+    .hero-banner h1 {
+        font-size: 3.5em; /* Adjust font size for medium screens */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .hero-banner {
+        height: 400px; /* Adjust height as needed for small screens */
+    }
+
+    .hero-banner h1 {
+        font-size: 3.5em; /* Adjust font size for small screens */
+    }
+}
+
+/* Common styling for both .box and .herobox */
+/* Default Styles */
+
+.herobox {
+    display: flex;
+    align-items: center; /* Center content vertically */
+}
+
+h1, p {
+    flex: 1; /* Equal width for h1 and p */
+    padding: 15px; /* Add some padding for spacing */
+    text-align: center;
+}
+
+.herobox h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 55px;
+}
+
+p {
+    font-family: 'Crimson Text', serif;
+    font-size: 18px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 35px;
+}
+
+.read-more-container {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    margin-top: 10px; /* Adjust the margin as needed */
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #000000, #ffffff);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+}
+
+.mission-image {
+    width: 95%; /* Ensure the image fits the container width */
+    height: 95%; /* Ensure the image fits the container height */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+    max-width: 95%; /* Ensure the image does not exceed its container */
+    max-height: 95%; /* Ensure the image does not exceed its container */
+    margin-top: 25px;
+}
+
+/* Responsive Media Queries */
+
+@media only screen and (max-width: 1000px) {
+    /* Adjust styles for screens up to 1000px width */
+    /* Add your responsive styles here */
+    .herobox h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .glow-on-hover {
+        width: 180px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* Adjust styles for screens up to 768px width */
+    /* Add your responsive styles here */
+    .herobox h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .glow-on-hover {
+        width: 150px;
+        height: 35px;
+        font-size: 12px;
+    }
+    
+    .image-container {
+        height: auto;
+    }
+
+    .mission-image {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        margin-top: 15px;
+    }
+}
+
+/* Vision state section */
+
+.vision-state {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+/* Vision state section heading */
+.vision-state h2 {
+    color: #000000;
+    font-size: 35px;
+}
+
+/* Vision state objectives list */
+.vision-state ul {
+    padding: 0;
+    font-family: 'Crimson Text', serif;
+}
+
+/* Vision state objectives list items */
+.vision-state li {
+    color: #000000;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Add some spacing for a clean look */
+.vision-state li:last-child {
+    margin-bottom: 0;
+}
+
+/* Media Query for max-width: 1000px */
+@media only screen and (max-width: 1000px) {
+    .vision-state {
+        max-width: 90%;
+    }
+}
+
+/* Media Query for max-width: 768px */
+@media only screen and (max-width: 768px) {
+    .vision-state {
+        max-width: 90%;
+        margin: 30px auto;
+    }
+
+    .vision-state h2 {
+        font-size: 30px;
+    }
+
+    .vision-state li {
+        font-size: 16px;
+    }
+}
+
+/* KeyProject Stylings */
+
+.key-projects {
+    text-align: center;
+}
+
+.key-projects h1 {
+    font-size: 35px;
+}
+
+.key-projects h2 {
+    font-size: 35px;
+}
+
+.key-projects p {
+    font-size: 18px;
+    font-family: 'Crimson Text', serif;
+}
+
+.project-container {
+    display: flex;
+    align-items: flex-start; /* Align items at the start (left) */
+    margin-top: 20px;
+    min-width: 100%; /* Adjust the minimum width as needed */
+    padding: 0 20px; /* Adjust padding as needed */
+}
+
+.project {
+    margin-right: 10px; /* Add margin to create space between image and text */
+}
+
+.project img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project img:hover {
+    transform: scale(1.1);
+}
+
+.project h2 {
+    text-align: center;
+    font-family: 'Whisper', cursive;
+}
+
+.project p {
+    text-align: justify; /* Justify the text */
+    margin: 10px;
+}
+
+/* Media Query for max-width: 1000px */
+@media only screen and (max-width: 1000px) {
+    .project-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items on smaller screens */
+    }
+}
+
+/* Media Query for max-width: 768px */
+@media only screen and (max-width: 768px) {
+    .key-projects h1,
+    .key-projects h2 {
+        font-size: 28px;
+    }
+
+    .key-projects p {
+        font-size: 16px;
+    }
+
+    .project img {
+        max-width: 200px; /* Set the image width to 200px for smaller screens */
+        max-height: 200px; /* Set the image height to 200px for smaller screens */
+        width: 100%; /* Make sure the image takes the full width of its container */
+    }
+
+    /* Remove animations and transitions */
+    .project img, .project-container, .key-projects {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Footer */
+
+.footer {
+    background: #000;
+    padding: 30px 0;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+}
+
+.footer .row {
+    width: 100%;
+    margin: 1% 0;
+    padding: 0.6% 0;
+    color: gray;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .row a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.5s;
+}
+
+.footer .row a:hover {
+    color: #fff;
+}
+
+.footer .row ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .row ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+/* Footer Page Links */
+
+.footer .row-links {
+    width: 100%;
+    margin: 1% auto;
+    padding: 0.6% 0;
+    color: gray;
+    font-size: 0.8em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .row-links ul li {
+    display: block;
+    margin: 10px 0;
+}
+
+.footer .row-links ul {
+    text-align: center;
+}
+
+.footer .row-links a i {
+    font-size: 2.75em;
+    margin: 1% 0;
+    display: block;
+}
+
+.footer .row-links a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.5s;
+    display: block;
+}
+
+.footer .row-links a:hover {
+    color: #fff;
+}
+
+/* Social media icons specific styling */
+.footer .row-socials i {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.2em;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+    .footer .row,
+    .footer .row-links {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer .row ul,
+    .footer .row-links ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer .row ul li,
+    .footer .row-links ul li {
+        margin: 10px 0;
+    }
+
+    .footer .row-links a i {
+        margin: 5% 0;
+    }
+
+    .footer .row-socials {
+        text-align: center;
+    }
+}
+
+/* Contact Us Page */
+
+#contact-title {
+    font-size: 40px;
+}
+
+/* Contact Info */
+
+form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin: 10px auto; /* Set the left and right margins to 'auto' */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 65%;
+}
+  
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+  
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+  
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 35px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block; /* Make the button a block element */
+    margin: 0 auto; /* Center the button horizontally */
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+  
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Animals in Sri Lanka */
+
+.banner-animalssl {
+    width: 100%;
+    height: 650px; /* Adjust the height as needed */
+    background-image: url(./Images/animalssl.jpg);
+    background-position: center;
+    background-size: cover; /* Ensure the background covers the entire element */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Set text color to white or another suitable color */
+    text-align: center;
+}
+
+.banner-animalssl h1 {
+    font-size: 4.5em;
+    margin: 0;
+}
+
+.banner-animalssl h1:hover {
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+    transition: all 0.3s ease; /* Add a smooth transition effect */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+    .banner-animalssl {
+        height: 500px; /* Adjust the height as needed for this screen size range */
+    }
+
+    .banner-animalssl h1 {
+        font-size: 3.5em; /* Adjust the font size for this screen size range */
+    }
+}
+
+/* Indigenous Animals in Sri Lanka */
+
+#sl-title {
+    font-size: 50px;
+}
+
+#p-sl {
+    font-family: 'Crimson Text', serif;
+    font-size: 20px;
+}
+
+.image-container-sl {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    padding: 50px;
+}
+
+.image-wrapper-sl {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.image-container-sl img {
+    width: 550px;
+    height: 550px;
+    object-fit: cover;
+    border: 1px solid #ddd; /* Optional: Add a border around the images */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.image-wrapper-sl p {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto; /* Push the paragraph to the right */
+}
+
+.image-wrapper-sl h2 {
+    font-family: 'Whisper', cursive;
+    text-align: center; /* Center text horizontally */
+    font-size: 50px;
+    text-decoration: underline 1px solid;
+}
+
+.image-wrapper-sl h3 {
+    text-align: center; /* Center text horizontally */
+}
+
+/* Learn More Button for Indigenous Animals in Sri Lanka */
+
+.custom-read-more-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.custom-glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.custom-glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #000000, #ffffff);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.custom-glow-on-hover:active {
+    color: #000;
+}
+
+.custom-glow-on-hover:active:after {
+    background: transparent;
+}
+
+.custom-glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.custom-glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+#park-title {
+    font-family: 'Whisper', cursive;
+    font-size: 40px;
+}
+
+@media only screen and (max-width: 767px) {
+    .image-container-sl {
+        padding: 15px;
+    }
+
+    .image-wrapper-sl {
+        flex-direction: column; /* Change the flex direction to column */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text horizontally */
+    }
+
+    .image-wrapper-sl img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 10px; /* Add some space between image and text */
+    }
+
+    .image-wrapper-sl h2 {
+        font-size: 30px;
+    }
+
+    .image-wrapper-sl p {
+        font-size: 14px; /* Adjust the font size for the paragraph */
+        margin-top: 0; /* Remove default top margin for paragraphs */
+    }
+
+    .custom-glow-on-hover {
+        width: 140px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    #park-title {
+        font-size: 24px;
+    }
+}
+
+/* Parks Attached Links */
+
+#parks-link-title {
+    font-size: 50px;
+}
+
+.parks-container {
+    display: flex;
+    align-items: center; /* Center align items vertically */
+    justify-content: center; /* Center align items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if they exceed the container width */
+    margin-top: 0;
+    padding: 10px;
+}
+
+.parks-link {
+    margin: 10px;
+    flex: 1; /* Distribute available space equally among items */
+}
+
+.parks-link img {
+    width: 95%;
+    height: 450px; /* Set a fixed height for both images */
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Visit Page Button */
+
+.parks-btn {
+    text-align: center;
+    margin-top: 10px; /* Adjust the margin as needed */
+}
+
+.parks-btn a {
+    text-decoration: none; /* Remove underlines from the link */
+}
+
+.parks-btn .parks-glow-btn {
+    display: inline-block; /* Ensure the button is displayed as an inline block */
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center; /* Center-align the text */
+    line-height: 50px; /* Vertically center the text */
+}
+
+.parks-btn a:hover .parks-glow-btn {
+    background: #666; /* Change the color to the desired grey shade on hover */
+}
+
+.parks-btn a:hover .parks-glow-btn:after {
+    background: #666; /* Change the color to the desired grey shade on hover */
+}
+
+.parks-btn a:active .parks-glow-btn {
+    color: #000;
+}
+
+.parks-btn a:active .parks-glow-btn:after {
+    background: transparent;
+}
+
+.parks-btn a .parks-glow-btn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 768px) {
+    .parks-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .parks-item {
+        width: 100%;
+        max-width: 400px; /* Adjust the max-width as needed */
+        text-align: center;
+        margin-bottom: 20px; /* Adjust the margin as needed */
+    }
+
+    .parks-item img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .parks-description {
+        font-size: 20px; /* Adjust the font size as needed */
+        margin-top: 10px; /* Adjust the margin as needed */
+    }
+
+    .parks-btn {
+        margin-top: 10px; /* Adjust the margin as needed */
+    }
+}
+
+/* Department of Wildlife Conservation Page */
+
+.dept-banner {
+    width: 100%;
+    height: 650px; /* Adjust the height as needed */
+    background-image: url(./Images/department-main.jpg);
+    background-position: bottom;
+    background-size: cover; /* Ensure the background covers the entire element */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Set text color to white or another suitable color */
+    text-align: center;
+}
+
+.dept-banner h1 {
+    font-size: 4.5em;
+    margin: 0;
+}
+
+.dept-banner h1:hover {
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+    transition: all 0.3s ease; /* Add a smooth transition effect */
+}
+
+@media only screen and (max-width: 1000px) {
+    .dept-banner {
+        height: 500px; /* Adjust the height for smaller screens */
+    }
+
+    .dept-banner h1 {
+        font-size: 3.5em; /* Adjust the font size for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .dept-banner {
+        height: 400px; /* Adjust the height for even smaller screens */
+    }
+
+    .dept-banner h1 {
+        font-size: 2.5em; /* Adjust the font size for even smaller screens */
+    }
+}
+
+/* About Us Note */
+
+.main-aboutus {
+    position: relative;
+    overflow: hidden;
+}
+
+.main-aboutus {
+    line-height: 1.6;
+}
+
+.main-aboutus h1 {
+    font-size: 45px;
+}
+
+.main-aboutus p {
+    font-size: 18px;
+    text-align: justify;
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 20px; /* Adjust margin as needed to create space for the image */
+}
+
+/* Map/Location (Google) */
+
+.location-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+}
+
+.map-container {
+    max-width: 100%; /* Use max-width for responsiveness */
+    width: 600px;
+    height: 450px;
+    margin: 10px auto;
+}
+
+.location-container h1 {
+    font-size: 45px;
+    text-align: center;
+    margin: 0;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+    .location-container {
+        flex-direction: row; /* Change flex direction for larger screens */
+    }
+
+    .map-container {
+        width: 80%; /* Adjust width for larger screens */
+        height: 400px; /* Adjust height as needed */
+        margin: 10px auto;
+    }
+
+    .location-container h1 {
+        font-size: 25px; /* Adjust font size for larger screens */
+    }
+}
+
+/* For screens up to 768px width */
+@media only screen and (max-width: 768px) {
+    .map-container {
+        margin-right: 20px; /* Adjust right margin accordingly */
+    }
+
+    .location-container h1 {
+        font-size: 30px; /* Adjust font size as needed */
+    }
+}
+
+/* Gallery title styles */
+#gallery-title {
+    font-size: 3rem; /* Use relative units for font size */
+}
+
+/* Slider container styles */
+.slider-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.slider-container img {
+    max-width: 55%; /* Make images 15% smaller */
+    max-height: 60%; /* Ensure images don't exceed the container height */
+    margin: 1.5rem; /* Use relative units for margin */
+    border: 2px solid #fefae0;
+    filter: sepia(100%);
+    transition: border 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+}
+
+.slider-container img:hover {
+    border-color: #fff; /* Use a concise property for border color */
+    transform: scale(1.055);
+    filter: none;
+}
+
+/* Slider styles */
+.slider {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    overflow-x: auto;
+}
+
+.slider img {
+    width: 85%; 
+    height: 85%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .slider-container {
+        flex-direction: column; /* Stack images vertically on smaller screens */
+        align-items: center;
+    }
+
+    #gallery-title {
+        font-size: 25px; /* Use relative units for font size */
+    }
+
+    .slider-container img {
+        max-width: 100%; /* Reset max-width for smaller screens */
+        max-height: 100%;
+        margin: 1rem;
+    }
+
+    .slider {
+        flex-direction: column; /* Stack images vertically on smaller screens */
+        align-items: center;
+    }
+}
+
+/* Sri Lankan Leopards */
+
+.banner-leopard {
+    width: 100%;
+    height: 650px; /* Adjust the height as needed */
+    background-image: url(./Images/leopard-main.jpg);
+    background-position: center;
+    background-size: cover; /* Ensure the background covers the entire element */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Set text color to white or another suitable color */
+    text-align: center;
+}
+
+.banner-leopard h1 {
+    font-size: 4.5em;
+    margin: 0;
+}
+
+.banner-leopard h1:hover {
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+    transition: all 0.3s ease; /* Add a smooth transition effect */
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+    .banner-leopard {
+        height: 500px; /* Adjust the height for smaller screens */
+    }
+
+    .banner-leopard h1 {
+        font-size: 3.5em; /* Adjust the font size for smaller screens */
+    }
+}
+
+/* Venues Notes */
+
+.venues-notes p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    text-align: left;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.venues-notes h1 {
+    font-size: 40px; /* Slightly reduce the heading size for a more balanced look */
+    margin-bottom: 10px; /* Add some spacing below headings for better readability */
+    text-decoration: underline;
+}
+
+.venues-notes section {
+    margin-bottom: 40px;
+}
+
+/* Section 2 */
+
+.section-2-leopards {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#section-2-title {
+    font-size: 45px;
+}
+
+.section-2-leopards h1 {
+    margin-top: 0;
+    font-size: 35px;
+}
+
+.section-2-leopards h2 {
+    color: #2c3e50;
+    margin-top: 15px;
+    font-size: 30px;
+}
+
+.section-2-leopards li {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.section-2-leopards li ul {
+    margin-top: 8px;
+}
+
+.section-2-leopards p {
+    font-size: 23px;
+}
+
+.section-2-leopards img {
+    display: block;
+    margin: 0 auto; /* Center the images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+    .section-2-leopards img {
+        height: 200px;
+        width: 350px;
+        box-shadow: none; /* Remove box shadow */
+        margin: 0 auto; /* Center the images */
+    }
+
+    /* Remove animations and transitions */
+    .section-2-leopards img:hover {
+        -webkit-text-stroke: initial;
+        color: initial;
+        transition: none;
+    }
+}
+
+.section-2-leopards strong {
+    font-size: 18px;
+}
+
+#link-leopardorg a {
+    text-decoration: none;
+}
+
+/* Introduction Page */
+
+.intro-banner {
+    width: 100%;
+    height: 650px; /* Adjust the height as needed */
+    background-image: url(./Images/intro-banner.jpg);
+    background-position: center;
+    background-size: cover; /* Ensure the background covers the entire element */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Set text color to white or another suitable color */
+    text-align: center;
+}
+
+.intro-banner h1 {
+    font-size: 4.5em;
+    margin: 0;
+}
+
+.intro-banner h1:hover {
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+    transition: all 0.3s ease; /* Add a smooth transition effect */
+}
+
+.park-description1, .park-description2, .park-description3 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* For screens between 768px and 1000px */
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+    .intro-banner {
+        height: 450px; /* Adjust the height for medium-sized screens */
+    }
+
+    .intro-banner h1 {
+        font-size: 3.5em; /* Adjust the font size for medium-sized screens */
+    }
+}
+
+/* Other Parks (Horton Plains, Hikkaduwa Marine National Park, Minneriya National Park) */
+
+/* Horton Plains*/
+
+#main-t-intro {
+    font-size: 45px;
+}
+
+#main-t-p {
+    font-size: 22px;
+}
+
+#park1-title {
+    text-align: center; /* Center the title */
+    font-size: 35px;
+    padding: 5px;
+}
+
+.park-description1 {
+    text-align: justify;
+    margin-bottom: 20px;
+    font-size: 19.5px;
+}
+
+.map-container1 {
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-container1 iframe {
+    width: 80%;
+    height: 600px;
+    margin-left: 180px;
+}
+
+/* For screens between 768px and 1000px */
+@media screen and (max-width: 768px) {
+    .map-container1 iframe {
+        width: 80%; /* Make the image fill the container */
+        height: 600px; /* Maintain aspect ratio */
+        margin: 10px 0; /* Adjust margin for better spacing */
+        margin-right: 45px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .map-container1 iframe {
+        width: 80%; /* Make the image fill the container */
+        height: 600px; /* Maintain aspect ratio */
+        padding: 50px;
+    }
+}
+
+.image-gallery1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image-gallery1 img {
+    width: 600px;
+    height: 400px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+/* Responsive styles for <= 768px */
+@media screen and (max-width: 768px) {
+    .image-gallery1 {
+        flex-direction: column; /* Change to column layout */
+        align-items: center;
+    }
+
+    .image-gallery1 img {
+        width: 80%; /* Make the image fill the container */
+        height: auto; /* Maintain aspect ratio */
+        margin: 10px 0; /* Adjust margin for better spacing */
+    }
+}
+
+/* Responsive styles for 768px - 1000px */
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+    .image-gallery1 {
+        flex-direction: column; /* Change to column layout */
+        align-items: center;
+    }
+}
+
+/* Hikkaduwa Marine National Park */
+
+#park2-title {
+    text-align: center; /* Center the title */
+    font-size: 35px;
+}
+
+.park-description2 {
+    text-align: justify;
+    margin-bottom: 20px;
+    font-size: 19.5px;
+}
+
+.map-container2 {
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-container2 iframe {
+    width: 80%;
+    height: 600px;
+    margin-left: 180px;
+}
+
+/* For screens between 768px and 1000px */
+@media screen and (max-width: 768px) {
+    .map-container2 iframe {
+        width: 80%; /* Make the image fill the container */
+        height: 600px; /* Maintain aspect ratio */
+        margin: 10px 0; /* Adjust margin for better spacing */
+        margin-right: 45px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .map-container2 iframe {
+        width: 80%; /* Make the image fill the container */
+        height: 600px; /* Maintain aspect ratio */
+        padding: 50px;
+    }
+}
+
+.image-gallery2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image-gallery2 img {
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+/* Responsive styles for <= 768px */
+@media screen and (max-width: 768px) {
+    .image-gallery2 {
+        flex-direction: column; /* Change to column layout */
+        align-items: center;
+    }
+
+    .image-gallery2 img {
+        width: 80%; /* Make the image fill the container */
+        height: auto; /* Maintain aspect ratio */
+        margin: 10px 0; /* Adjust margin for better spacing */
+    }
+}
+
+/* Responsive styles for 769px - 1000px */
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+    .image-gallery2 {
+        flex-direction: column; /* Change to column layout */
+        align-items: center;
+    }
+}
+
+/* Minneriya National Park */
+
+#park3-title {
+    text-align: center; /* Center the title */
+    font-size: 35px;
+}
+
+.park-description3 {
+    text-align: justify;
+    margin-bottom: 20px;
+    font-size: 19.5px;
+}
+
+.map-container3 {
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-container3 iframe {
+    width: 80%;
+    height: 600px;
+    margin-left: 180px;
+}
+
+/* For screens between 768px and 1000px */
+@media screen and (max-width: 768px) {
+    .map-container3 iframe {
+        width: 80%; /* Make the image fill the container */
+        height: 600px; /* Maintain aspect ratio */
+        margin: 10px 0; /* Adjust margin for better spacing */
+        margin-right: 45px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .map-container3 iframe {
+        width: 80%; /* Make the image fill the container */
+        height: 600px; /* Maintain aspect ratio */
+        padding: 50px;
+    }
+}
+
+.image-gallery3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image-gallery3 img {
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+/* Responsive styles for <= 768px */
+@media screen and (max-width: 768px) {
+    .image-gallery3 {
+        flex-direction: column; /* Change to column layout */
+        align-items: center;
+    }
+
+    .image-gallery3 img {
+        width: 80%; /* Make the image fill the container */
+        height: auto; /* Maintain aspect ratio */
+        margin: 10px 0; /* Adjust margin for better spacing */
+    }
+}
+
+/* Responsive styles for 769px - 1000px */
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+    .image-gallery3 {
+        flex-direction: column; /* Change to column layout */
+        align-items: center;
+    }
+}
+
+/* Wildlife Summary Table */
+
+table {
+    width: 90%; /* Adjust the width as per your preference */
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 2px solid #000; /* Bold outline for table */
+    margin-top: 20px;
+}
+
+caption {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+th, td {
+    padding: 15px; /* Increased padding for better spacing */
+    text-align: left;
+    border-bottom: 1px solid #000;
+    font-size: 1em;
+}
+
+/* Add Vertical Line */
+th:not(:last-child),
+td:not(:last-child) {
+    border-right: 1px solid #000;
+}
+
+/* Image Styles */
+.table-imgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap as needed */
+}
+
+.table-imgs img {
+    width: 500px;
+    height: 400px;
+    object-fit: cover; /* Maintain aspect ratio */
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Media query for screens with a width of 768px */
+@media only screen and (max-width: 768px) {
+    .table-imgs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .table-imgs img {
+        width: 80%;
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Media query for screens with a width of 1000px */
+@media only screen and (min-width: 769px) and (max-width: 1000px) {
+    .table-imgs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .table-imgs img {
+        width: 80%;
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
