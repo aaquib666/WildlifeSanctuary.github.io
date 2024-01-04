@@ -14,6 +14,18 @@ body, html {
     overflow-x: hidden;
     background-image: linear-gradient(to left, #FDF7E4, #FAEED1, #DED0B6, #BBAB8C);
     box-sizing: border-box;
+    animation: transitionIn 1s;
+}
+
+@keyframes transitionIn {
+   from {
+       opacity: 0;
+       transform: translateX(-10px);
+   }
+    to {
+       opacity: 1;
+       transform: translateX(0);
+   }
 }
 
 /* Additional Line Class */
