@@ -279,6 +279,12 @@ header {
     margin: 0;
 }
 
+.hero-banner h1:hover {
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+    transition: all 0.3s ease; /* Add a smooth transition effect */
+}
+
 .banner-content {
     position: absolute;
     top: 50%;
@@ -286,17 +292,6 @@ header {
     transform: translate(-50%, -50%);
     text-align: center;
     color: #fff; /* Set text color to white or another suitable color */
-}
-
-.hero-banner h1 {
-    font-size: 4.125em;
-    margin: 0;
-}
-
-.hero-banner h1:hover {
-    -webkit-text-stroke: 2px #fff;
-    color: transparent;
-    transition: all 0.3s ease; /* Add a smooth transition effect */
 }
 
 @media only screen and (max-width: 1000px) {
@@ -437,7 +432,6 @@ h2 {
 
 @media only screen and (max-width: 1000px) {
     /* Adjust styles for screens up to 1000px width */
-    /* Add your responsive styles here */
     .herobox h1 {
         font-size: 40px;
     }
@@ -459,7 +453,6 @@ h2 {
 
 @media only screen and (max-width: 768px) {
     /* Adjust styles for screens up to 768px width */
-    /* Add your responsive styles here */
     .herobox h1 {
         font-size: 30px;
     }
