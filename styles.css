@@ -292,8 +292,8 @@ header {
         height: 500px; /* Adjust height as needed for medium screens */
     }
 
-    .hero-banner h1 {
-        font-size: 3.5em; /* Adjust font size for medium screens */
+    #herobanner-title {
+        font-size: 2em; /* Adjust font size for medium screens */
     }
 }
 
