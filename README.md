@@ -16,7 +16,7 @@ Welcome to the Sri Lankan Wildlife Conservation Webpage! This platform is dedica
 
 ## Getting Started
 
-To get started with our webpage, simply visit [www.srilankanwildlifeconservation.org](https://www.srilankanwildlifeconservation.org). Browse through the various sections to discover the wonders of Sri Lankan wildlife and find ways to get involved.
+To get started with our webpage, simply visit [www.srilankanwildlifeconservation.org](https://aaquib666.github.io/wildlifesanctuary.github.io/). Browse through the various sections to discover the wonders of Sri Lankan wildlife and find ways to get involved.
 
 ## Contributing
 
