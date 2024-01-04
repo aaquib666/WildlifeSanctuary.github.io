@@ -1,4 +1,4 @@
-# [wildlifesanctuary.github.io] (https://aaquib666.github.io/wildlifesanctuary.github.io/)
+# [wildlifesanctuary.github.io](https://aaquib666.github.io/wildlifesanctuary.github.io/)
 
 # Sri Lankan Wildlife Conservation Webpage
 
