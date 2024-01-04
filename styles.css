@@ -297,7 +297,7 @@ header {
     }
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 768px) {
     .hero-banner {
         height: 400px; /* Adjust height as needed for small screens */
     }
