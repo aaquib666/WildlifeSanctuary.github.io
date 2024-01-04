@@ -253,7 +253,6 @@ header {
     width: 100%;
     height: 650px; /* Adjust the height as needed */
     background-image: url(./Images/hero-banner.jpg);
-    background-position: center;
     background-size: cover; /* Ensure the background covers the entire element */
     position: relative;
     display: flex;
