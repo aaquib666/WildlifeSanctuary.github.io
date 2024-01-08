@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife in Sri Lanka</title>
+
+    <!--- Social Media Icons Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Add Favicon -->
+    <link rel="icon" href="./Images/logoico.ico" type="icon/ico">
+    <link rel="shortcut icon" href="./Images/logoico.ico" type="icon/ico">
+
+    <link href="./styles.css" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#f2eee4">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+    <header id="header">
+        <!--adding the logo-->
+      
+       <!--Navigation Bar--> 
+       <section class="logo">
+           <a href="./index.html"><img class="logo" src="./Images/logopng-removebg.png" alt="w-logo" width="100px"></a>
+       </section>
+       
+       <nav>
+        <ul class="navlinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="introduction.html">Sri Lankan Wildlife Introduction</a></li>
+            <li><a href="department.html">Department of Wildlife Conservation</a></li>
+            <li><a href="sl_leopard.html">Sri Lankan Leopards</a></li>
+            <li><a href="animals_in_srilanka.html">Animals in Sri Lanka</a></li>
+        </ul>
+    </nav>
+    <a class="contact" a href="contact.html" ><button>Contact Us</button></a>
+        <section class="menubtn">
+            <input type="checkbox" role="button" aria-label="Display The Menu" class="menu">
+        </section>
+        <section class="dropdown_menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="introduction.html">Sri Lankan Wildlife Introduction</a></li>
+            <li><a href="department.html">Department of Wildlife Conservation</a></li>
+            <li><a href="sl_leopard.html">Sri Lankan Leopards</a></li>
+            <li><a href="animals_in_srilanka.html">Animals in Sri Lanka</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </section>
+           <script>
+               const menu_btn = document.querySelector('.menubtn')
+               const menubtnICON = document.querySelector('.menu_btn input')
+               const dropmenu = document.querySelector('.dropdown_menu')
+    
+               menu_btn.onclick = function(){
+                   dropmenu.classList.toggle('open')
+                   const isOpen = dropmenu.classList.contains('open')
+               }
+           </script>
+      </header>
+
+<main>
+
+    <!-- Hero Banner -->
+<section class="hero-banner">
+    <section class="banner-content">
+        <h1>Welcome to Wildlife in Sri Lanka</h1>
+    </section>
+</section>
+
+    <section class="line"></section>        
+
+    <section class="herobox">
+        <h1>Nature's Hero: Exploring Sri Lanka's Wildlife Wonders</h1>
+         
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia neque et felis congue ultrices. 
+            Maecenas auctor dapibus convallis. Donec a bibendum lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
+            Mauris eleifend elementum nunc, euismod placerat est eleifend quis. Nunc id mollis libero, vitae vestibulum ipsum. Duis accumsan purus vitae diam varius mollis. 
+            Vivamus elementum egestas arcu posuere auctor. Mauris eu risus vitae nulla sodales dictum at nec nibh. 
+            Sed tempus turpis turpis, quis iaculis quam tristique sit amet. Pellentesque sodales nulla enim, sit amet molestie ipsum condimentum at.</p><br>
+    </section>
+
+    <h2>Our Mission: What Do We Plan to Accomplish Here?</h2>
+<p>Embark on a journey with us as we set out to achieve our goals and make a lasting impact. Curious to learn more? Click the button below.</p>
+
+<!-- Read More Button -->
+
+<section class="read-more-container">
+    <button class="glow-on-hover">Read More</button>
+</section>
+
+<!--- Vision Statement --->
+
+<section>
+    <h2>Vision Statement</h2>
+    <p>Our vision is to create a world where wildlife thrives in its natural habitat, free from the threat of extinction, and where humans coexist harmoniously with the diverse species that share our planet.</p>
+</section>
+
+<section class="vision-state">
+    <h2>Key Objectives</h2>
+    <ul>
+        <li>Preserve and protect endangered species and their habitats.</li>
+        <li>Educate and raise awareness about the importance of biodiversity and wildlife conservation.</li>
+        <li>Collaborate with local communities, governments, and organizations to implement sustainable conservation practices.</li>
+    </ul>
+</section>
+
+<!-- KeyProjects -->
+
+<section class="key-projects">
+    <h1>Key Projects Done by Us;</h1>
+    
+    <section class="project-container">
+        <section class="project">
+            <img src="./Images/leopard-index.jpeg" alt="Leopard Image">
+            <h2>Project Leopard Guardian</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et urna molestie, egestas ipsum ac, placerat tortor. 
+            Etiam varius at ligula nec luctus. Fusce sed tortor suscipit, elementum erat nec, efficitur tellus. 
+            In sodales turpis a elit ultrices, sed imperdiet felis finibus. Proin molestie fringilla porttitor.
+            </p>
+        </section>
+        <section class="project">
+            <img src="./Images/Turtle.jpeg" alt="Turtle Image">
+            <h2>Project Turtle Haven</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et urna molestie, egestas ipsum ac, placerat tortor. 
+            Etiam varius at ligula nec luctus. Fusce sed tortor suscipit, elementum erat nec, efficitur tellus. 
+            In sodales turpis a elit ultrices, sed imperdiet felis finibus. Proin molestie fringilla porttitor.
+            </p>
+        </section>
+        <section class="project">
+            <img src="./Images/birds.jpeg" alt="Birds Image">
+            <h2>Project Avian Sanctuary</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et urna molestie, egestas ipsum ac, placerat tortor. 
+            Etiam varius at ligula nec luctus. Fusce sed tortor suscipit, elementum erat nec, efficitur tellus. 
+            In sodales turpis a elit ultrices, sed imperdiet felis finibus. Proin molestie fringilla porttitor.
+            </p>
+        </section>
+    </section>
+</section>
+
+</main>
+
+<!-- Footer -->  
+
+<footer>
+    <section class="footer">
+        <section class="row-socials">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook-square"></i></a>
+
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i></a>
+
+            <a href="https://www.x.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-square-x-twitter"></i></a>
+
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i></a>
+        </section>
+        
+        <section class="row-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services">Our Services</a></li>
+                <li><a href="department.html">About Us</a></li>
+                <li><a href="tos">Terms & Conditions</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </section>
+        
+        <section class="row">
+            &copy; 2023 Wildlife in Sri Lanka. All rights reserved. 
+        </section>
+    </section>
+</footer>
+
+</body>
+</html>
