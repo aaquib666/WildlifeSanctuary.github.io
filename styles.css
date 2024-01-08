@@ -14,7 +14,7 @@ body, html {
     overflow-x: hidden;
     background-image: linear-gradient(to left, #F0E5C3, #E7DCC0, #D1BFA6, #B0957B);
     box-sizing: border-box;
-    animation: transitionIn 1s;
+    animation: transitionIn 0.75s;
 }
 
 @keyframes transitionIn {
