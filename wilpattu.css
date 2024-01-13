@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* Favicon Stylings */
+link[rel="icon"],
+link[rel="shortcut icon"] {
+    border-radius: 50%;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-image: linear-gradient(to left, #F0E5C3, #E7DCC0, #D1BFA6, #B0957B);
+    box-sizing: border-box;
+    animation: transitionIn 1s;
+}
+
+@keyframes transitionIn {
+   from {
+       opacity: 0;
+       transform: translateX(-10px);
+   }
+    to {
+       opacity: 1;
+       transform: translateX(0);
+   }
+}
+
+/* Navbar Styles */
+
+header {
+    margin: 0px;
+    background-color: #232023;
+    font-family: "Philosopher";
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        padding: 1%; /* Adjusted padding for smaller screens */
+    }
+
+    .navlinks li a {
+        padding: 5px;
+        font-size: 14px; /* Increased font size for better readability on smaller screens */
+    }
+
+    .navlinks li a:hover {
+        font-size: 16px; /* Increased font size on hover for better visibility */
+    }
+}
+
+.navlinks li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.navlinks li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    transition: all 0.3s ease 0s;
+}
+
+.navlinks li a:hover {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: #837b6b;
+    padding: 20px;
+    border: none;
+    font-size: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.navlinks li a:active {
+    background-color: #BBAB8C;
+    color: #ffffff;
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.contact button {
+    margin-left: 20px;
+    cursor: pointer;
+    background-color: #BBAB8C;
+    text-decoration: none;
+    border-radius: 20px;
+    font-family: "Philosopher";
+    font-size: 20px;
+    padding: 11px 15px 11px 15px;
+    border: none;
+    transition: all 0.3s ease 0s;
+    color: black;
+    margin-right: 10px;
+}
+
+.contact button:hover {
+    background-color: #837b6b;
+    font-family: "Philosopher";
+    font-size: 25px;
+    padding: 20px;
+    border-radius: 5px;
+    color: black;
+}
+
+/* Dropdown Menu */
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    height: 0;
+    background-color: #232023;
+    backdrop-filter: blur(15px);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+    margin-top: 5px;
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.dropdown_menu li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.dropdown_menu .contact button {
+    width: 100%;
+    padding: 2%;
+    margin: 0%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Hamburger Icon Styling */
+
+.menubtn {
+    display: none;
+    cursor: pointer;
+}
+
+.menu {
+    --s: 25px;
+    --c: rgb(255, 255, 255);
+
+    height: var(--s);
+    aspect-ratio: 1;
+    border: none;
+    padding: 0;
+    border-inline: calc(var(--s)/2) solid #0000;
+    box-sizing: content-box;
+    --_g1: linear-gradient(var(--c) 20%, #0000 0 80%, var(--c) 0)
+           no-repeat content-box border-box;
+    --_g2: radial-gradient(circle closest-side at 50% 12.5%, var(--c) 95%, #0000)
+           repeat-y content-box border-box;
+    background:
+      var(--_g2) left  var(--_p, 0px) top,
+      var(--_g1) left  calc(var(--s)/10 + var(--_p, 0px)) top,
+      var(--_g2) right var(--_p, 0px) top,
+      var(--_g1) right calc(var(--s)/10 + var(--_p, 0px)) top;
+    background-size:
+      20% 80%,
+      40% 100%;
+    position: relative;
+    clip-path: inset(0 25%);
+    cursor: pointer;
+    transition:
+      background-position .3s var(--_s, .3s),
+      clip-path 0s var(--_s, .6s);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.menu:before,
+.menu:after {
+    content: "";
+    position: absolute;
+    border-radius: var(--s);
+    inset: 40% 0;
+    background: var(--c);
+    transition: transform .3s calc(.3s - var(--_s, .3s));
+}
+
+.menu:checked {
+    clip-path: inset(0);
+    --_p: calc(-1*var(--s));
+    --_s: 0s;
+}
+
+.menu:checked:before {
+    transform: rotate(45deg);
+}
+
+.menu:checked:after {
+    transform: rotate(-45deg);
+}
+
+.menu:focus-visible {
+    clip-path: none;
+    border: none;
+    outline: 2px solid var(--c);
+    outline-offset: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+    .navlinks,
+    .contact button {
+        display: none;
+    }
+
+    .menubtn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+}
+
+/* Footer */
+
+.footer {
+    background: #000;
+    padding: 30px 0;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+}
+
+.footer .row {
+    width: 100%;
+    margin: 1% 0;
+    padding: 0.6% 0;
+    color: gray;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .row a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.5s;
+}
+
+.footer .row a:hover {
+    color: #fff;
+}
+
+.footer .row ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .row ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+/* Footer Page Links */
+
+.footer .row-links {
+    width: 100%;
+    margin: 1% auto;
+    padding: 0.6% 0;
+    color: gray;
+    font-size: 0.8em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .row-links ul li {
+    display: block;
+    margin: 10px 0;
+}
+
+.footer .row-links ul {
+    text-align: center;
+    padding-left: 0px;
+}
+
+.footer .row-links a i {
+    font-size: 2.75em;
+    margin: 1% 0;
+    display: block;
+}
+
+.footer .row-links a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.5s;
+    display: block;
+}
+
+.footer .row-links a:hover {
+    color: #fff;
+}
+
+/* Social media icons specific styling */
+.footer .row-socials i {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.2em;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+    .footer .row,
+    .footer .row-links {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer .row ul,
+    .footer .row-links ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer .row ul li,
+    .footer .row-links ul li {
+        margin: 10px 0;
+    }
+
+    .footer .row-links a i {
+        margin: 5% 0;
+    }
+
+    .footer .row-socials {
+        text-align: center;
+    }
+}
+
+/* Main Contents */
+
+.banner-wilpattu {
+    width: 100%;
+    height: 100vh; /* Adjust the height as needed */
+    background-image: url(./Images/wilpattu-herobanr.jpg);
+    background-position: center;
+    background-size: cover; /* Ensure the background covers the entire element */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Set text color to white or another suitable color */
+    text-align: center;
+}
+
+.banner-wilpattu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha (last value) to control darkness */
+}
+
+.banner-wilpattu h1 {
+    font-size: 4.5em;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.banner-wilpattu h1:hover {
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+    transition: all 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Media query for screens 768px and below */
+@media only screen and (max-width: 768px) {
+    .banner-wilpattu {
+        height: 500px; /* Adjust the height for smaller screens */
+    }
+
+    .banner-wilpattu h1 {
+        font-size: 3.5em; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Media query for screens between 768px and 1000px */
+@media only screen and (min-width: 769px) and (max-width: 1000px) {
+    .banner-wilpattu h1 {
+        font-size: 4em; /* Adjust font size for medium screens */
+    }
+}
+
+.history {
+    text-align: center;
+}
+
+#wilpattu-title {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.history p, .history ul {
+    font-size: 18px;
+    text-align: left;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding: 10px;
+    line-height: 1.6;
+}
+
+/* Sub Images */
+
+#wilpattu-img-title {
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#wilpattu-img-subtitle {
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.wilpattu-subimgs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.wilpattu-subimgs img {
+    width: 500px;
+    height: 350px;
+    padding: 10px;
+    margin: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.wilpattu-subimgs img:hover {
+    transform: scale(1.1); /* Increase the size on hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add box shadow on hover */
+}
+
+/* Media query for screens with a maximum width of 768px */
+@media only screen and (max-width: 768px) {
+    .wilpattu-subimgs {
+        flex-direction: column; /* Change to a column layout */
+        align-items: center;
+    }
+
+    .wilpattu-subimgs img {
+        width: 80%; /* Make images fill the width of the container */
+        height: auto; /* Maintain aspect ratio */
+        margin: 10px 0; /* Adjust margin for spacing between images */
+    }
+
+    .wilpattu-subimgs img:hover {
+        transform: none; /* Reset the transform on hover for smaller screens */
+        box-shadow: none; /* Remove box shadow on hover for smaller screens */
+    }
+}
+
+/* Media query for screens with a maximum width of 1000px */
+@media only screen and (max-width: 1000px) {
+
+}
+
+/* Img Infos */
+
+.animal-box {
+    background-color: #F1E9D2;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.animal-box h2 {
+    color: #000000;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.animal-box p {
+    color: #000000;
+    line-height: 1.5;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Visit Yala Button */
+
+.parks-btn {
+    text-align: center;
+    margin-top: 10px; /* Adjust the margin as needed */
+    margin: 10px;
+}
+
+.parks-btn a {
+    text-decoration: none; /* Remove underlines from the link */
+}
+
+.parks-btn .parks-glow-btn {
+    display: inline-block; /* Ensure the button is displayed as an inline block */
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center; /* Center-align the text */
+    line-height: 50px; /* Vertically center the text */
+}
+
+.parks-btn a:hover .parks-glow-btn {
+    background: #666; /* Change the color to the desired grey shade on hover */
+}
+
+.parks-btn a:hover .parks-glow-btn:after {
+    background: #666; /* Change the color to the desired grey shade on hover */
+}
+
+.parks-btn a:active .parks-glow-btn {
+    color: #000;
+}
+
+.parks-btn a:active .parks-glow-btn:after {
+    background: transparent;
+}
+
+.parks-btn a .parks-glow-btn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
