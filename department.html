@@ -85,7 +85,7 @@
 
 <!-- Gallery -->
 
-<h1 id="areaTitle">Conservation Success Stories: Sri Lanka's Protected Areas</h1>
+<h1 id="gallery-title">Conservation Success Stories: Sri Lanka's Protected Areas</h1>
 <section class="slider-container">
     <section class="slider">
       <img src="./Images/slider-1.jpg" alt="Slide 1">
@@ -151,6 +151,7 @@
         .then(response => response.json())
         .then(data => {
             document.getElementById('subTitle').textContent = data.subTitle;
+            document.getElementById('locTitle').textContent = data.locTitle;
             document.getElementById('description').textContent = data.description;
         })
         .catch(error => console.error('Error fetching data:', error));
