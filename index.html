@@ -173,9 +173,22 @@
                 <li><a href="services">Our Services</a></li>
                 <li><a href="department.html">About Us</a></li>
                 <li><a href="tos">Terms & Conditions</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#">Contact Us</a></li>
             </ul>
         </section>
+
+<!--- Newsletter --->
+      
+<div class="container">
+
+    <h2 id="newltr-hd">Subscribe to Our Newsletter</h2>
+
+      <form x-data="newsletterForm()" x-on:submit.prevent="subscribe">
+        <input type="text" placeholder="Enter Email address" x-model="email" required>
+        <input type="submit" value="Subscribe">
+      </form>
+
+  </div>
         
         <section class="row">
             &copy; 2023 Wildlife in Sri Lanka. All rights reserved. 
@@ -195,6 +208,7 @@
 <!-- https://www.iucnredlist.org/ -->
     
 </footer>
-
+    <script src="./script.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
 </body>
 </html>
