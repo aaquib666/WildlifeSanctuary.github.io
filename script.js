@@ -76,12 +76,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function newsletterForm() {
   return {
-    name: '',
     email: '',
     subscribe() {
       // Saves subscriptions to the localStorage
       const subscription = {
-        name: this.name,
         email: this.email
       };
       const subscriptions = JSON.parse(localStorage.getItem('subscriptions')) || [];
@@ -89,7 +87,6 @@ function newsletterForm() {
       localStorage.setItem('subscriptions', JSON.stringify(subscriptions));
 
       // To clear the form fields after submission
-      this.name = '';
       this.email = '';
 
       alert('Subscription successful!'); // You can replace this with any UI feedback you want
