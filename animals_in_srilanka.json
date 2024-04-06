@@ -1,0 +1,54 @@
+{
+    "indigenousAnimals": [
+        {
+            "id": 1,
+            "name": "The Sri Lanka Blue Magpie",
+            "scientificName": "Urocissa ornata",
+            "image": "./Images/bluemagpie.jpg",
+            "alt": "Blue Magpie",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum turpis vitae orci rutrum, id volutpat mi ultrices. Praesent vitae mauris mollis, condimentum ipsum tincidunt, luctus sem. Etiam placerat ultrices consectetur. Donec nec aliquet justo. Nam blandit mollis justo, tincidunt iaculis mauris. Nullam in nunc sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi viverra imperdiet tortor, ac facilisis elit ultricies a. Phasellus porta semper purus, ac interdum odio varius sed. Fusce ut rutrum nunc. Nullam quis nibh et felis scelerisque dignissim. Ut interdum sollicitudin metus at bibendum. Curabitur aliquet vel lorem ac lobortis. Duis eu consectetur massa, non tristique orci."
+        },
+        {
+            "id": 2,
+            "name": "The Purple-faced Langur",
+            "scientificName": "Trachypithecus vetulus",
+            "image": "./Images/langur.jpg",
+            "alt": "Langur",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum turpis vitae orci rutrum, id volutpat mi ultrices. Praesent vitae mauris mollis, condimentum ipsum tincidunt, luctus sem. Etiam placerat ultrices consectetur. Donec nec aliquet justo. Nam blandit mollis justo, tincidunt iaculis mauris. Nullam in nunc sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi viverra imperdiet tortor, ac facilisis elit ultricies a. Phasellus porta semper purus, ac interdum odio varius sed. Fusce ut rutrum nunc. Nullam quis nibh et felis scelerisque dignissim. Ut interdum sollicitudin metus at bibendum. Curabitur aliquet vel lorem ac lobortis. Duis eu consectetur massa, non tristique orci."
+        },
+        {
+            "id": 3,
+            "name": "The Sri Lanka Grey Hornbill",
+            "scientificName": "Ocyceros gingalensis",
+            "image": "./Images/hornbill.jpeg",
+            "alt": "Hornbill",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum turpis vitae orci rutrum, id volutpat mi ultrices. Praesent vitae mauris mollis, condimentum ipsum tincidunt, luctus sem. Etiam placerat ultrices consectetur. Donec nec aliquet justo. Nam blandit mollis justo, tincidunt iaculis mauris. Nullam in nunc sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi viverra imperdiet tortor, ac facilisis elit ultricies a. Phasellus porta semper purus, ac interdum odio varius sed. Fusce ut rutrum nunc. Nullam quis nibh et felis scelerisque dignissim. Ut interdum sollicitudin metus at bibendum. Curabitur aliquet vel lorem ac lobortis. Duis eu consectetur massa, non tristique orci."
+        },
+        {
+            "id": 4,
+            "name": "The Sri Lankan Leopard",
+            "scientificName": "Panthera pardus kotiya",
+            "image": "./Images/leopard-subsl.jpg",
+            "alt": "Leopard",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum turpis vitae orci rutrum, id volutpat mi ultrices. Praesent vitae mauris mollis, condimentum ipsum tincidunt, luctus sem. Etiam placerat ultrices consectetur. Donec nec aliquet justo. Nam blandit mollis justo, tincidunt iaculis mauris. Nullam in nunc sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi viverra imperdiet tortor, ac facilisis elit ultricies a. Phasellus porta semper purus, ac interdum odio varius sed. Fusce ut rutrum nunc. Nullam quis nibh et felis scelerisque dignissim. Ut interdum sollicitudin metus at bibendum. Curabitur aliquet vel lorem ac lobortis. Duis eu consectetur massa, non tristique orci."
+        }
+    ],
+    "nationalParks": [
+        {
+            "id": 1,
+            "name": "Yala National Park",
+            "image": "./Images/yala-sub.jpg",
+            "alt": "Yala National Park",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros mauris, tempor vel tortor eget, faucibus tempor nibh. Morbi velit tortor, tincidunt eu sollicitudin sit amet, scelerisque vitae mi. Maecenas pretium feugiat leo, eu tempor ligula pretium a. Duis ac nisi mi. Pellentesque tristique volutpat erat, vel sollicitudin mauris feugiat sit amet. Phasellus tincidunt suscipit imperdiet.",
+            "link": "./yala.html"
+        },
+        {
+            "id": 2,
+            "name": "Wilpattu National Park",
+            "image": "./Images/wilpattu-sub.jpg",
+            "alt": "Wilpattu National Park",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros mauris, tempor vel tortor eget, faucibus tempor nibh. Morbi velit tortor, tincidunt eu sollicitudin sit amet, scelerisque vitae mi. Maecenas pretium feugiat leo, eu tempor ligula pretium a. Duis ac nisi mi. Pellentesque tristique volutpat erat, vel sollicitudin mauris feugiat sit amet. Phasellus tincidunt suscipit imperdiet.",
+            "link": "./wilpattu.html"
+        }
+    ]
+}

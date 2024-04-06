@@ -68,61 +68,27 @@
     
 <!--- 3 Venues where leopards are found in Sri Lanka --->
 
-<section class="venues-notes">
-<h1>Yala National Park</h1>
-  <section>
-    <p>
-        Yala National Park, undoubtedly the crown jewel of safari parks in Sri Lanka, stands out as the top spot for wildlife enthusiasts, 
-        particularly those captivated by the elusive leopards. Recognized globally for its exceptionally high densities of these magnificent predators, 
-        Yala offers an unparalleled safari experience in the heart of its pristine wilderness.
-        The park's reputation as the land of the leopard is well-deserved, with sightings of these beautiful cats strolling across open plains or perched atop rocky outcrops being signature experiences. 
-        Yala has been home to iconic leopards, such as the legendary "Chaitya Male" and Hamu, known for their strength and prowess. Currently, 
-        ongoing studies have identified over 130 individual leopards within the park's relatively small area of 142 square kilometers. Notably, 
-        new individuals continue to be identified, emphasizing the remarkable density of leopards in this wildlife haven.
-        Some of the prominent leopard personalities in the present era include Lucas, Julius, Harak Hora, and Aster. 
-        Visitors to Yala National Park have the opportunity to delve deeper into the world of leopards at the informative "Leopard Center" within the park. Here, 
-        they can enhance their understanding of these predators, compare their own sightings with a virtual database, and even attempt to identify the leopards they encounter during their safari adventures.
-        As you embark on a safari through Yala National Park, be prepared to witness the sleek and stealthy movements of leopards, 
-        creating unforgettable moments in a sanctuary where the connection between these graceful creatures and their diverse natural habitat is truly awe-inspiring.
-    </p>
-  </section>
-
-  <h1>Wilpattu National Park</h1>
-  <section>
-    <p>
-        Wilpattu National Park, Sri Lanka's largest sanctuary located on the North-Western end of the island. 
-        Contrasting with Yala, Wilpattu's landscape is dominated by dense dark forests and natural lakes called Villus.
-        Within this pristine reserve, a thriving population of majestic leopards roams, offering rare glimpses into their natural behaviors. 
-        Though sightings are challenging in the dense forests, the reward is immense when these elusive predators grace the roads or the open sand-rimmed lakes.
-        Closed during the civil war, Wilpattu opened to the public in 2010. 
-        Over time, habituated leopards have made the park increasingly popular among wildlife enthusiasts seeking a quieter experience than Yala.
-        Notable leopards include "Prince" or "Natta," once the most photographed leopard in Sri Lanka, and the fearless Nelum Wila Male, a star of the park. 
-        Among females, "Cleopatra," a playful cub turned successful mother, captivates lucky visitors in the Mahapatessa area.
-        Wilpattu National Park promises not only thrilling leopard encounters but also the rich stories and personalities defining life in this untamed wilderness.
-    </p>
-  </section>
-
-  <h1>Kumana National Park</h1>
-  <section>
-    <p>
-        Kumana National Park, an enchanting realm of mystery and wonder nestled on the far eastern corner of the island. 
-        Connected to Yala and part of the same ecosystem, Kumana offers a unique and secluded experience for nature enthusiasts. 
-        A leisurely drive, albeit a lengthy one, leads you to this captivating sanctuary, 
-        which was initially renowned as a bird haven with numerous species nesting in the waters of Kumana Villu. 
-        However, in the last decade, the park has witnessed a surge in leopard sightings, adding an exciting dimension to its allure.
-        Legend has it that the leopards of Kumana are dubbed "man-eaters," with the leopards of Lenama, 
-        an area within the park, acquiring mythical status for their supposed larger and deadlier nature. 
-        In reality, these leopards are the same magnificent creatures found in Yala. The park has experienced a few unfortunate incidents, 
-        such as a construction worker being taken and eaten by a large male leopard in 2019. Subsequently, 
-        another leopard attacked a farmer in Panama, resulting in a fatality. Despite these isolated cases, 
-        the allure of spotting leopards in Kumana continues to grow, as the animals become more accustomed to their surroundings.
-        What sets Kumana apart is its serene ambiance, offering a level of privacy and escape from large crowds. 
-        The park's remoteness, coupled with its challenging accessibility, has transformed it into one of Sri Lanka's best-kept secrets. 
-        As you embark on a safari through Kumana, be prepared for an unparalleled wildlife encounter, where the elusive leopards gracefully roam in the shadows, 
-        embodying the untamed beauty of this hidden gem.
-    </p>
-  </section>
-</section>
+<div x-data="{
+    parks: [],
+    fetchParks: async function() {
+        const response = await fetch('./leopard.json');
+        const data = await response.json();
+        this.parks = data.parks;
+    }
+}" x-init="fetchParks">
+    <section class="venues-notes">
+        <h1>Wildlife Parks in Sri Lanka</h1>
+        
+        <template x-for="park in parks" :key="park.id">
+            <section>
+                <h1 x-text="park.name"></h1>
+                <section>
+                    <p x-text="park.description"></p>
+                </section>
+            </section>
+        </template>
+    </section>
+</div>
 
 <!--- Section 2 --->
 
@@ -206,9 +172,13 @@
 
     <!--- Link  --->
 
-    <section id="link-leopardorg">
-        <a href="https://www.leopocon.org/"><h1>Dive Deeper: Visit the following website to delve into additional information on leopard conservation in Sri Lanka and learn about ways you can make a difference.<br>Click Here<br></h1></a>
-    </section>
+    <div x-data="{ link: 'https://www.leopocon.org/' }">
+        <section id="link-leopardorg">
+            <a :href="link">
+                <h1>Dive Deeper: Visit the following website to delve into additional information on leopard conservation in Sri Lanka and learn about ways you can make a difference.<br>Click Here<br></h1>
+            </a>
+        </section>
+    </div>    
 
 </main>
 

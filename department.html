@@ -68,43 +68,57 @@
 
 <!-- About Us -->
 
-<section class="main-aboutus">
-<h1>About Us</h1>
-<p>Welcome to the online home of the Department of Wildlife Conservation, where our passion for preserving and protecting the Earth's diverse ecosystems comes to life. 
-    As stewards of the natural world, our department is committed to the conservation of wildlife and their habitats, ensuring the delicate balance of our planet's biodiversity is maintained for generations to come. Through rigorous research, innovative management strategies, 
-    and community engagement, we strive to safeguard endangered species, promote sustainable practices, and foster a harmonious coexistence between humans and wildlife. 
-    Explore our website to discover the vital work we do, the projects we undertake, and how you can join us in our mission to create a sustainable and thriving environment for all living beings. 
-    Together, let's celebrate and safeguard the wonders of our natural world. At the core of our conservation efforts lies a deep commitment to education and awareness. 
-    We believe that fostering an understanding of the interconnectedness between humanity and the natural world is paramount to achieving lasting change. 
-    Through educational programs, outreach initiatives, and partnerships with schools and local communities, 
-    we aim to inspire a sense of responsibility and appreciation for the incredible biodiversity that surrounds us. 
-    By empowering individuals with knowledge, 
-    we not only cultivate a new generation of environmental advocates but also contribute to the collective effort of building a world where humans and wildlife coexist in harmony. 
-    Join us on this educational journey, and together, let's shape a future where conservation is not just a mission but a way of life.</p>
-</section>
-  
+<div x-data="{
+    aboutUs: {},
+    fetchAboutUsData: async function() {
+        const response = await fetch('./department.json');
+        const data = await response.json();
+        this.aboutUs = data.aboutUs;
+    }
+}" x-init="fetchAboutUsData">
+    <section class="main-aboutus">
+        <h1>About Us</h1>
+        <p x-text="aboutUs.content"></p>
+    </section>
+</div>
+
 <!-- Map/Location (Google) -->
 
-<section class="location-container">
-    <h1>Our Location</h1>
-    <section class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.64435537171!2d79.86544639052354!3d6.910855523345552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25923bb00db0b%3A0xbf679f858b0d23b1!2sMinistry%20of%20Wildlife%20and%20Forest%20Conservation!5e0!3m2!1sen!2slk!4v1702046023839!5m2!1sen!2slk"
-         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div x-data="{
+    location: {},
+    fetchLocationData: async function() {
+        const response = await fetch('./department.json');
+        const data = await response.json();
+        this.location = data.location;
+    }
+}" x-init="fetchLocationData">
+    <section class="location-container">
+        <h1>Our Location</h1>
+        <section class="map-container">
+            <iframe x-bind:src="location.mapSrc" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
     </section>
-</section>
+</div>
 
 <!-- Gallery -->
 
-<h1 id="gallery-title">Conservation Success Stories: Sri Lanka's Protected Areas</h1>
-<section class="slider-container">
-    <section class="slider">
-      <img src="./Images/slider-1.jpg" alt="Slide 1">
-      <img src="./Images/slider-2.jpg" alt="Slide 2">
-      <img src="./Images/slider-3.jpg" alt="Slide 3">
-      <img src="./Images/slider-4.jpg" alt="Slide 4">
-      <img src="./Images/slider-5.jpg" alt="Slide 5">
+<div x-data="{
+    gallery: [],
+    fetchGalleryData: async function() {
+        const response = await fetch('./department.json');
+        const data = await response.json();
+        this.gallery = data.gallery;
+    }
+}" x-init="fetchGalleryData">
+    <h1 id="gallery-title">Conservation Success Stories: Sri Lanka's Protected Areas</h1>
+    <section class="slider-container">
+        <section class="slider">
+            <template x-for="image in gallery" :key="image.id">
+                <img :src="image.src" :alt="image.alt">
+            </template>
+        </section>
     </section>
-  </section>
+</div>
 
 </main>
 

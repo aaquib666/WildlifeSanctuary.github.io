@@ -1,0 +1,38 @@
+{
+    "otherWildlifeParks": {
+        "title": "Other Wildlife Parks in Sri Lanka",
+        "content": "Explore the lesser-known wildlife parks in Sri Lanka, each offering a distinct and enriching experience for nature enthusiasts. Beyond the well-known destinations, these hidden treasures showcase the country's diverse ecosystems and contribute to its reputation for rich biodiversity. Whether you choose to venture into the depths of Sinharaja Forest Reserve or discover the expansive landscapes of Wilpattu National Park, the lesser-explored wildlife sanctuaries provide an off-the-beaten-path journey for those seeking a more intimate connection with nature. Witness the untamed beauty of these parks, each with its unique charm and the promise of a memorable safari experience."
+    },
+    "parkSection1": {
+        "title": "Horton Plains National Park",
+        "description": "Nestled in Sri Lanka's central highlands, the Horton Plains National Park rises majestically to 2,100 meters above sea level, earning the moniker 'Roof of the Island.' A harmonious blend of cloud forests and lush montane grasslands, this pristine plateau shelters a rich array of endemic flora and fauna adapted to its cool climate. While the graceful sambar deer traverse the sprawling grasslands, other residents include giant squirrels, wild boars, and the elusive rusty-spotted cats, forming a diverse mammalian community amidst the breathtaking landscapes. Delving into the enchanting cloud forests reveals rare lizard species like the rhino-horned lizard, adding an air of mystique to the sanctuary. Meanwhile, for bird enthusiasts, the park offers a captivating spectacle with both migratory and endemic species gracing the skies. Amidst this natural symphony, the Horton Plains National Park stands as a testament to the delicate balance between altitude and biodiversity, inviting visitors to immerse themselves in the captivating beauty of this highland sanctuary.",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.6739945881277!2d80.79975837581752!3d6.809451319772637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3882edb4b78ef%3A0xcebca89153777249!2sHorton%20Plains%20National%20Park!5e0!3m2!1sen!2slk!4v1703643989655!5m2!1sen!2slk",
+        "images": [
+            {"id": 1, "src": "./Images/horton1.jpg", "alt": "Horton Plains Image 1"},
+            {"id": 2, "src": "./Images/horton2.jpg", "alt": "Horton Plains Image 2"},
+            {"id": 3, "src": "./Images/horton3.jpg", "alt": "Horton Plains Image 3"}
+        ]
+    },
+    "parkSection2": {
+        "title": "Hikkaduwa Marine National Park",
+        "description": "Nestled along the sun-kissed southern coastline of Sri Lanka, the Hikkaduwa Marine National Park stands as a testament to the island nation's commitment to preserving its rich marine biodiversity. Initially designated as a Nature Reserve in 1988, the park earned its prestigious national park status in 2002, securing its place as one of only two marine national parks in the country. What sets Hikkaduwa apart is not just its historical significance but the unparalleled diversity of marine life that thrives beneath its azure waters. The coral reefs here, regarded as the most diverse and accessible in the region, beckon adventurers and nature enthusiasts alike with promises of extraordinary snorkeling and diving experiences. At the heart of Hikkaduwa's aquatic wonders lies a sheltered lagoon, cradling the main reef in its gentle embrace. This fringing reef, boasting an average depth of approximately 5 meters, is a canvas painted with a kaleidoscope of vibrant corals. Over 60 different coral species, including the mesmerizing boulder and encrusting varieties, as well as delicate strands of Acropora and the cabbage-like Montipora coral, create a mesmerizing underwater tapestry. Amidst the swaying seagrass beds, graceful sea turtles find sanctuary, while schools of tropical reef fish, from the dazzling parrot fish to the elegant angel fish and butterfly fish, gracefully navigate the intricate corals. Venturing along the outer slope of the reef reveals a world where the ocean's grandeur unfolds in captivating scenes. Here, encounters with blacktip reef sharks add a thrilling edge to the marine exploration, sharing the waters with the majestic hawksbill and green turtles. The Hikkaduwa Marine National Park, with its rich tapestry of marine life and stunning underwater landscapes, stands as a testament to the beauty that lies beneath the surface and invites all who seek nature's wonders to embark on an unforgettable journey.",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1014087.2498241655!2d79.58284225586688!3d6.857207372684512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae1770f548d710b%3A0x159baa380959fcaa!2sHikkaduwa%20Marine%20National%20Park!5e0!3m2!1sen!2slk!4v1703664967092!5m2!1sen!2slk",
+        "images": [
+            {"id": 1, "src": "./Images/hikkaduwa1.jpeg", "alt": "Hikkaduwa Park Image 1"},
+            {"id": 2, "src": "./Images/hikkaduwa2.jpg", "alt": "Hikkaduwa Park Image 2"},
+            {"id": 3, "src": "./Images/hikkaduwa3.jpg", "alt": "Hikkaduwa Park Image 3"},
+            {"id": 4, "src": "./Images/hikkaduwa4.jpeg", "alt": "Hikkaduwa Park Image 4"}
+        ]
+    },
+    "parkSection3": {
+        "title": "Minneriya National Park",
+        "description": "Nestled in the enchanting landscapes of Sri Lanka's north central province, Minneriya National Park beckons with its compact yet diverse expanse spanning just over 300 square miles. Despite its modest size, the park boasts a captivating tapestry of ecosystems, from sprawling grasslands and dense scrub to dry tropical forests and serene wetlands. A distinctive feature of Minneriya is its man-made tank, serving as a vital lifeline for the park's wildlife, sustaining them through the arid months. Within this natural haven, a rich tapestry of mammalian life unfolds, featuring elegant deer, purple-faced langur and macaque monkeys, elusive sloth bears, and a population of approximately 20 leopards. The avian symphony resonates throughout the park, with migratory and indigenous birds adorning the skies. Among them are the vibrant hanging parrot, the melodious brown-capped babbler, and the graceful green bee-eater. However, the true spectacle that steals the spotlight is 'The Gathering'—a breathtaking phenomenon where more than 300 elephants converge at the Minneriya reservoir during the dry season (July to October). This awe-inspiring event, marking the largest congregation of Asian elephants globally, elevates Minneriya National Park to an unparalleled realm of natural wonder and splendor. The park is not merely a sanctuary; it is a testament to the harmonious coexistence of diverse ecosystems and the mesmerizing beauty of Sri Lanka's wildlife.",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126486.73910518126!2d80.58472596806844!3d7.82042581227949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afcaf01e98dd4d9%3A0x32690ce1665dc6c2!2sMinneriya%20National%20Park%20Safari!5e0!3m2!1sen!2slk!4v1703681282076!5m2!1sen!2slk",
+        "images": [
+            {"id": 1, "src": "./Images/minneriya1.jpg", "alt": "Minneriya National Park Image 1"},
+            {"id": 2, "src": "./Images/minneriya2.jpg", "alt": "Minneriya National Park Image 2"},
+            {"id": 3, "src": "./Images/minneriya3.jpg", "alt": "Minneriya National Park Image 3"},
+            {"id": 4, "src": "./Images/minneriya4.jpg", "alt": "Minneriya National Park Image 4"}
+        ]
+    }
+}

@@ -62,6 +62,24 @@
                    dropmenu.classList.toggle('open')
                    const isOpen = dropmenu.classList.contains('open')
                }
+
+               function contentData() {
+    return {
+        title: '',
+        content: '',
+        async init() {
+            const response = await fetch('index.json');
+            const data = await response.json();
+            this.title = data.title;
+            this.content = data.content;
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const app = contentData();
+    app.init();
+});
            </script>
       </header>
 
@@ -76,14 +94,9 @@
 
     <section class="line"></section>        
 
-    <section class="herobox">
-        <h1>Nature's Hero: Exploring Sri Lanka's Wildlife Wonders</h1>
-         
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia neque et felis congue ultrices. 
-            Maecenas auctor dapibus convallis. Donec a bibendum lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
-            Mauris eleifend elementum nunc, euismod placerat est eleifend quis. Nunc id mollis libero, vitae vestibulum ipsum. Duis accumsan purus vitae diam varius mollis. 
-            Vivamus elementum egestas arcu posuere auctor. Mauris eu risus vitae nulla sodales dictum at nec nibh. 
-            Sed tempus turpis turpis, quis iaculis quam tristique sit amet. Pellentesque sodales nulla enim, sit amet molestie ipsum condimentum at.</p><br>
+    <section class="herobox" x-data="contentData()">
+        <h1 x-text="title"></h1>
+        <p x-html="content"></p>
     </section>
 
     <h2>Our Mission: What Do We Plan to Accomplish Here?</h2>
@@ -97,55 +110,55 @@
 
 <!--- Vision Statement --->
 
-<section>
-    <h2>Vision Statement</h2>
-    <p>Our vision is to create a world where wildlife thrives in its natural habitat, free from the threat of extinction, and where humans coexist harmoniously with the diverse species that share our planet.</p>
-</section>
+<div x-data="{
+    visionStatement: {},
+    keyObjectives: [],
+    fetchVisionData: async function() {
+        const response = await fetch('./index.json');
+        const data = await response.json();
+        this.visionStatement = data.visionStatement;
+        this.keyObjectives = data.keyObjectives;
+    }
+}" x-init="fetchVisionData">
+    <section>
+        <h2 x-text="visionStatement.title"></h2>
+        <p x-text="visionStatement.description"></p>
+    </section>
 
-<section class="vision-state">
-    <h2>Key Objectives</h2>
-    <ul>
-        <li>Preserve and protect endangered species and their habitats.</li>
-        <li>Educate and raise awareness about the importance of biodiversity and wildlife conservation.</li>
-        <li>Collaborate with local communities, governments, and organizations to implement sustainable conservation practices.</li>
-    </ul>
-</section>
+    <section class="vision-state">
+        <h2>Key Objectives</h2>
+        <ul>
+            <template x-for="objective in keyObjectives" :key="objective.id">
+                <li x-text="objective.description"></li>
+            </template>
+        </ul>
+    </section>
+</div>
 
 <!-- KeyProjects -->
 
-<section class="key-projects">
-    <h1>Key Projects Done by Us;</h1>
-    
-    <section class="project-container">
-        <section class="project">
-            <img src="./Images/leopard-index.jpeg" alt="Leopard Image">
-            <h2>Project Leopard Guardian</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et urna molestie, egestas ipsum ac, placerat tortor. 
-            Etiam varius at ligula nec luctus. Fusce sed tortor suscipit, elementum erat nec, efficitur tellus. 
-            In sodales turpis a elit ultrices, sed imperdiet felis finibus. Proin molestie fringilla porttitor.
-            </p>
-        </section>
-        <section class="project">
-            <img src="./Images/Turtle.jpeg" alt="Turtle Image">
-            <h2>Project Turtle Haven</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et urna molestie, egestas ipsum ac, placerat tortor. 
-            Etiam varius at ligula nec luctus. Fusce sed tortor suscipit, elementum erat nec, efficitur tellus. 
-            In sodales turpis a elit ultrices, sed imperdiet felis finibus. Proin molestie fringilla porttitor.
-            </p>
-        </section>
-        <section class="project">
-            <img src="./Images/birds.jpeg" alt="Birds Image">
-            <h2>Project Avian Sanctuary</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et urna molestie, egestas ipsum ac, placerat tortor. 
-            Etiam varius at ligula nec luctus. Fusce sed tortor suscipit, elementum erat nec, efficitur tellus. 
-            In sodales turpis a elit ultrices, sed imperdiet felis finibus. Proin molestie fringilla porttitor.
-            </p>
+<div x-data="{
+    projects: [],
+    fetchProjects: async function() {
+        const response = await fetch('./index.json');
+        const data = await response.json();
+        this.projects = data.projects;
+    }
+}" x-init="fetchProjects">
+    <section class="key-projects">
+        <h1>Key Projects Done by Us;</h1>
+        
+        <section class="project-container">
+            <template x-for="project in projects" :key="project.id">
+                <section class="project">
+                    <img :src="project.image" :alt="project.alt">
+                    <h2 x-text="project.name"></h2>
+                    <p x-text="project.description"></p>
+                </section>
+            </template>
         </section>
     </section>
-</section>
+</div>
 
 </main>
 
@@ -191,7 +204,7 @@
   </div>
         
         <section class="row">
-            &copy; 2023 Wildlife in Sri Lanka. All rights reserved. 
+            &copy; 2024 Wildlife in Sri Lanka. All rights reserved. 
         </section>
     </section>
 

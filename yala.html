@@ -66,25 +66,27 @@
     </section>
 </section>
 
-<section class="history">
-    <h1 id="yala-title">Unveiling the Past: Yala National Park's Rich History</h1>
-     
-    <p id="yala-history-p">Yala, one of Sri Lanka's oldest national parks, achieved wildlife sanctuary status in 1900 and was formally established as a national park in 1938, 
-        making it one of the first two national parks in the country, alongside Wilpattu. Nestled in the heart of Yala is the ancient Buddhist temple Sithulpawa, 
-        believed to have roots dating back 2,000 years. Renowned for its rich biodiversity, Yala is home to 44 mammal species and 215 bird species, playing a crucial role in 
-        the conservation of Sri Lankan elephants, leopards, and aquatic birds. The park boasts an extraordinary concentration of leopards, making it one of the prime locations 
-        globally for these elusive big cats. Situated in a dry semi-arid region, Yala experiences an average annual rainfall ranging from 500 to 775 millimeters, with temperatures 
-        varying between 26.4°C in January and 30°C in April. Additionally, the park features natural rock pools that provide a perennial water source and is bordered by the sea 
-        to the southeast, showcasing stunning natural beaches and sand dunes. Explore the wonders of Yala, where history, biodiversity, and natural beauty converge in an 
-        unforgettable experience.</p>
+<div x-data="{
+    yalaData: [],
+    fetchYalaData: async function() {
+        const response = await fetch('./yala.json');
+        const data = await response.json();
+        this.yalaData = data.yala;
+    }
+}" x-init="fetchYalaData">
+    <section class="history">
+        <h1 id="yala-title" x-text="yalaData.title"></h1>
+         
+        <p id="yala-history-p" x-text="yalaData.description"></p>
 
-    <ul>
-        <li><strong>Location:</strong> Yala is situated in Sri Lanka's south-east, along the Indian Ocean, covering nearly 130,000 hectares.</li><br> 
-        <li><strong>Historical Transformation:</strong> Initially used as a hunting ground for the elite during British rule, Yala has undergone a significant transformation into a conservation area, reflecting a shift in attitudes towards wildlife preservation.</li><br>
-        <li><strong>Recommended Visiting Period:</strong> The period between February and July is optimal for visitors. Lower water levels during this time encourage animals to emerge into open areas, increasing the likelihood of wildlife sightings.</li><br>
-    </ul>
-          
-</section>
+        <ul>
+            <template x-for="(item, index) in yalaData.info" :key="index">
+                <li x-html="item"></li>
+                <br>
+            </template>
+        </ul>
+    </section>
+</div>
 
 <h2 id="yala-img-title">Images from the Wonders of Yala National Park</h2>
     <h3 id="yala-img-subtitle">Some animals that are often seen in Yala National Park include:</h3>
@@ -94,34 +96,24 @@
     <img src="./Images/yala-03.jpeg" alt="Yala SubImg 3">
 </section>
 
-<section class="main-animalbox">
-<section class="animal-box">
-    <h2>Peacock <br><i>(Pavo cristatus)</i></h2>
-    <p>
-        The peacock is a beautiful bird with a life span of 10-25 years. It inhabits forests and grasslands,
-        feeding on insects, plants, and small animals. Known for their vibrant and colorful plumage,
-        peacocks are a sight to behold in nature.
-    </p>
-</section>
-
-<section class="animal-box">
-    <h2>Saltwater Crocodile <br><i>(Crocodylus porosus)</i></h2>
-    <p>
-        The saltwater crocodile, with a remarkable life span of 70-100 years, thrives in coastal areas and mangrove swamps.
-        Its diet includes fish, mammals, and birds. As the largest living reptile, saltwater crocodiles are recognized
-        for their powerful jaws and impressive presence in aquatic environments.
-    </p>
-</section>
-
-<section class="animal-box">
-    <h2>Sri Lankan Sloth Bear <br><i>(Melursus ursinus inornatus)</i></h2>
-    <p>
-        The sloth bear, living 20-25 years, is found in forests and grasslands. Feeding on insects, fruits, and termites,
-        sloth bears have a distinctive shaggy coat and a white V-shaped mark on their chest. These bears are fascinating
-        creatures with unique characteristics in the animal kingdom.
-    </p>
-</section>
-</section>
+<div x-data="{
+    animals: [],
+    fetchAnimals: async function() {
+        const response = await fetch('./yala.json');
+        const data = await response.json();
+        this.animals = data.animals;
+    }
+}" x-init="fetchAnimals">
+    <section class="main-animalbox">
+        <template x-for="animal in animals" :key="animal.id">
+            <section class="animal-box">
+                <h2 x-text="animal.name"></h2>
+                <i x-text="animal.scientificName"></i>
+                <p x-text="animal.description"></p>
+            </section>
+        </template>
+    </section>
+</div>
 
 <!--- Visit Wilpattu --->
 

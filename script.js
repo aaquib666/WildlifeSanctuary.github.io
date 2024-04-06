@@ -40,37 +40,7 @@ bullets.forEach((bullet) => {
 
 /* Users Data JSON */
 
-document.addEventListener('DOMContentLoaded', function() {
-  const signInForm = document.querySelector('.sign-in-form');
-  signInForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const username = signInForm.querySelector('.input-wrap:nth-child(1) input').value;
-      const password = signInForm.querySelector('.input-wrap:nth-child(2) input').value;
 
-      // Assuming users.json contains the user data
-      fetch('users.json')
-          .then(response => {
-              if (!response.ok) {
-                  throw new Error('Failed to fetch user data');
-              }
-              return response.json();
-          })
-          .then(users => {
-              const user = users.find(u => u.username === username && u.password === password);
-              if (user) {
-                  // Store user details in localStorage
-                  localStorage.setItem('currentUser', JSON.stringify(user));
-                  window.location.href = 'index.html';
-              } else {
-                  alert('Invalid username or password');
-              }
-          })
-          .catch(error => {
-              console.error('Error:', error);
-              alert('Failed to authenticate. Please try again later.');
-          });
-  });
-});
 
 /* Newsletter */
 

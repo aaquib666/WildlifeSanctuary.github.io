@@ -1,0 +1,32 @@
+{
+    "wilpattu": {
+      "title": "Unveiling the Past: Wilpattu National Park's Rich History",
+      "description": "Nestled within the verdant expanse of the Puttalam and Anuradhapura districts, Wilpattu National Park (WNP) stands as Sri Lanka's largest and one of its oldest protected areas, encompassing 131 thousand hectares of diverse landscapes. Established between 1938 and 1973 under the Fauna and Flora Protection Ordinance, this wilderness marvel is a crucial sanctuary for elephants, a habitat for the elusive Sri Lankan leopard, and a haven for the sloth bear. Distinguished by its dense forest cover, WNP unveils a tapestry of dry zone forests, thorny scrub, open plains, and the unique Villu wetlands. Reddish cliffs rising dramatically from the shores of Portugal Bay and Dutch Bay add a captivating dimension to the scenery. In proximity to the ancient city of Anuradhapura, the park boasts ancient ruins and artifacts, echoing the historical resonance of the region. Recognized as a wetland of international importance under the Ramsar Convention in 2013, WNP, along with adjacent marine wetlands, estuaries, and reservoirs, spans 165,800 hectares, making it a vital component of this ecological haven known as the 'Land of Villu' ; a name derived from the basin-shaped lakes, or Villus, scattered throughout its terrain. Covering almost 2% of Sri Lanka's total land area, Wilpattu National Park embodies a rich history, initially declared a Reserved Forest in 1903 and later designated as a game sanctuary in 1905 to safeguard wildlife from hunting.",
+      "info": [
+        "<strong>Location:</strong> Wilpattu National Park is nestled in the northern regions of Sri Lanka, spanning the Puttalam and Anuradhapura districts and bordering Mannar and Vavuniya Districts. Encompassing an expansive 131,000 hectares, it stands as the country's largest and one of its oldest protected areas.",
+        "<strong>Historical Significance:</strong> Established between 1938 and 1973 under the Fauna and Flora Protection Ordinance, Wilpattu National Park holds historical roots dating back to 1903 when part of it was initially declared a Reserved Forest. Evolving from a hunting ground for the elite during British rule, the park has undergone a remarkable transformation into a vital conservation area, embodying a shift in societal attitudes towards the preservation of its rich wildlife.",
+        "<strong>Optimal Visiting Period:</strong> The recommended time to explore Wilpattu National Park is between February and July. This period offers an optimal experience for visitors as lower water levels encourage wildlife to emerge into open areas, enhancing the chances of encountering the park's diverse inhabitants, including elephants, Sri Lankan leopards, and sloth bears."
+      ]
+    },
+    "animals": [
+      {
+        "id": 1,
+        "name": "Sambar Deer",
+        "scientificName": "Rusa unicolor",
+        "description": "The Sambar deer is a majestic creature with a lifespan ranging from 15 to 20 years. Found in diverse habitats such as forests, grasslands, and swamps, these elegant herbivores graze on a diet comprising leaves, grass, and various plants. Recognized for their striking and robust antlers, Sambar deer add a touch of grace to their natural surroundings. Observing these enchanting creatures in their native habitats provides a captivating glimpse into the beauty of the animal kingdom."
+      },
+      {
+        "id": 2,
+        "name": "Sri Lankan Leopard",
+        "scientificName": "Panthera pardus kotiya",
+        "description": "The Sri Lankan Leopard, a captivating and elusive feline, boasts a lifespan of around 12-15 years in the wild. Thriving in diverse environments such as forests, grasslands, and rocky terrains, these agile predators feed on a variety of prey, including deer, wild boars, and smaller mammals. Adorned with a distinctive golden coat adorned with striking rosettes, Sri Lankan Leopards are a symbol of grace and power in the wilderness. Observing these magnificent big cats in their natural habitat provides a thrilling glimpse into the untamed beauty of Sri Lanka's wildlife."
+      },
+      {
+        "id": 3,
+        "name": "Sri Lankan Elephant",
+        "scientificName": "Elephas maximus maximus",
+        "description": "The Sri Lankan Elephant, a majestic and revered species, boasts a remarkable lifespan of 60 to 75 years. Inhabiting a variety of landscapes including forests, grasslands, and wetlands, these gentle giants graze on an assortment of vegetation, ranging from grasses and leaves to fruits and bark. Known for their impressive tusks and distinctively large ears, Sri Lankan Elephants command attention with their sheer size and majestic presence. These magnificent creatures play a vital role in the island's ecosystem, shaping the landscape and contributing to the biodiversity of their habitats. The sight of a Sri Lankan Elephant moving gracefully through the wilderness is a testament to the rich natural heritage of the region. Preserving their habitats and ensuring their well-being is crucial for maintaining the delicate balance of Sri Lanka's ecosystems and conserving the awe-inspiring legacy of the Sri Lankan Elephant."
+      }
+    ]
+}
+  

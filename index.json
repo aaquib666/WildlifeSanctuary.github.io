@@ -1,0 +1,46 @@
+{
+    "title": "Nature's Hero: Exploring Sri Lanka's Wildlife Wonders",
+    "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lacinia neque et felis congue ultrices. Maecenas auctor dapibus convallis. Donec a bibendum lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris eleifend elementum nunc, euismod placerat est eleifend quis. Nunc id mollis libero, vitae vestibulum ipsum. Duis accumsan purus vitae diam varius mollis. Vivamus elementum egestas arcu posuere auctor. Mauris eu risus vitae nulla sodales dictum at nec nibh. Sed tempus turpis turpis, quis iaculis quam tristique sit amet. Pellentesque sodales nulla enim, sit amet molestie ipsum condimentum at.</p>",
+    "projects": [
+      {
+        "id": 1,
+        "name": "Project Leopard Guardian",
+        "image": "./Images/leopard-index.jpeg",
+        "alt": "Leopard Image",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et urna molestie, egestas ipsum ac, placerat tortor. Etiam varius at ligula nec luctus. Fusce sed tortor suscipit, elementum erat nec, efficitur tellus. In sodales turpis a elit ultrices, sed imperdiet felis finibus. Proin molestie fringilla porttitor."
+      },
+      {
+        "id": 2,
+        "name": "Project Turtle Haven",
+        "image": "./Images/Turtle.jpeg",
+        "alt": "Turtle Image",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et urna molestie, egestas ipsum ac, placerat tortor. Etiam varius at ligula nec luctus. Fusce sed tortor suscipit, elementum erat nec, efficitur tellus. In sodales turpis a elit ultrices, sed imperdiet felis finibus. Proin molestie fringilla porttitor."
+      },
+      {
+        "id": 3,
+        "name": "Project Avian Sanctuary",
+        "image": "./Images/birds.jpeg",
+        "alt": "Birds Image",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et urna molestie, egestas ipsum ac, placerat tortor. Etiam varius at ligula nec luctus. Fusce sed tortor suscipit, elementum erat nec, efficitur tellus. In sodales turpis a elit ultrices, sed imperdiet felis finibus. Proin molestie fringilla porttitor."
+      }
+    ],
+    "visionStatement": {
+      "title": "Vision Statement",
+      "description": "Our vision is to create a world where wildlife thrives in its natural habitat, free from the threat of extinction, and where humans coexist harmoniously with the diverse species that share our planet."
+    },
+    "keyObjectives": [
+      {
+        "id": 1,
+        "description": "Preserve and protect endangered species and their habitats."
+      },
+      {
+        "id": 2,
+        "description": "Educate and raise awareness about the importance of biodiversity and wildlife conservation."
+      },
+      {
+        "id": 3,
+        "description": "Collaborate with local communities, governments, and organizations to implement sustainable conservation practices."
+      }
+    ]
+}
+  

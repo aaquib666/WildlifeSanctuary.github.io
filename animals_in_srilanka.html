@@ -68,114 +68,58 @@
 
 <!-- Main Body -->
 
-<h1 id="sl-title">Indigenous Animals in Sri Lanka</h1>
+<div x-data="{
+    animals: [],
+    fetchAnimalData: async function() {
+        const response = await fetch('./animals_in_srilanka.json');
+        const data = await response.json();
+        this.animals = data.indigenousAnimals;
+    }
+}" x-init="fetchAnimalData">
+    <h1 id="sl-title">Indigenous Animals in Sri Lanka</h1>
 
-<section class="image-container-sl">
-    <section class="image-wrapper-sl">
-        <img src="./Images/bluemagpie.jpg" alt="Blue Magpie">
-        <section class="content-container">
-            <h2>The Sri Lanka Blue Magpie</h2>
-                <h3><i>Urocissa ornata</i></h3>
-        <p id="p-sl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum turpis vitae orci rutrum, id volutpat mi ultrices. 
-            Praesent vitae mauris mollis, condimentum ipsum tincidunt, luctus sem. Etiam placerat ultrices consectetur. Donec nec aliquet justo. 
-            Nam blandit mollis justo, tincidunt iaculis mauris. Nullam in nunc sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-            Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi viverra imperdiet tortor, ac facilisis elit ultricies a. 
-            Phasellus porta semper purus, ac interdum odio varius sed. Fusce ut rutrum nunc. Nullam quis nibh et felis scelerisque dignissim. 
-            Ut interdum sollicitudin metus at bibendum. Curabitur aliquet vel lorem ac lobortis. Duis eu consectetur massa, non tristique orci.</p>
-
-            <section class="custom-read-more-container">
-                <button class="custom-glow-on-hover">Learn More</button>
+    <section class="image-container-sl">
+        <template x-for="animal in animals" :key="animal.id">
+            <section class="image-wrapper-sl">
+                <img :src="animal.image" :alt="animal.alt">
+                <section class="content-container">
+                    <h2 x-text="animal.name"></h2>
+                    <h3><i x-text="animal.scientificName"></i></h3>
+                    <p x-text="animal.description"></p>
+                    <section class="custom-read-more-container">
+                        <button class="custom-glow-on-hover">Learn More</button>
+                    </section>
+                </section>
             </section>
-        </section>
-
+        </template>
     </section>
-    <section class="image-wrapper-sl">
-        <img src="./Images/langur.jpg" alt="Langur">
-        <section class="content-container">
-            <h2>The Purple-faced Langur</h2>
-                <h3><i>Trachypithecus vetulus</i></h3>
-        <p id="p-sl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum turpis vitae orci rutrum, id volutpat mi ultrices. 
-            Praesent vitae mauris mollis, condimentum ipsum tincidunt, luctus sem. Etiam placerat ultrices consectetur. Donec nec aliquet justo. 
-            Nam blandit mollis justo, tincidunt iaculis mauris. Nullam in nunc sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-            Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi viverra imperdiet tortor, ac facilisis elit ultricies a. 
-            Phasellus porta semper purus, ac interdum odio varius sed. Fusce ut rutrum nunc. Nullam quis nibh et felis scelerisque dignissim. 
-            Ut interdum sollicitudin metus at bibendum. Curabitur aliquet vel lorem ac lobortis. Duis eu consectetur massa, non tristique orci.</p>
-
-            <section class="custom-read-more-container">
-                <button class="custom-glow-on-hover">Learn More</button>
-            </section>
-        </section>
-
-    </section>
-    <section class="image-wrapper-sl">
-        <img src="./Images/hornbill.jpeg" alt="Hornbill">
-        <section class="content-container">
-            <h2>The Sri Lanka Grey Hornbill</h2>
-                <h3><i>Ocyceros gingalensis</i></h3>
-        <p id="p-sl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum turpis vitae orci rutrum, id volutpat mi ultrices. 
-            Praesent vitae mauris mollis, condimentum ipsum tincidunt, luctus sem. Etiam placerat ultrices consectetur. Donec nec aliquet justo. 
-            Nam blandit mollis justo, tincidunt iaculis mauris. Nullam in nunc sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-            Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi viverra imperdiet tortor, ac facilisis elit ultricies a. 
-            Phasellus porta semper purus, ac interdum odio varius sed. Fusce ut rutrum nunc. Nullam quis nibh et felis scelerisque dignissim. 
-            Ut interdum sollicitudin metus at bibendum. Curabitur aliquet vel lorem ac lobortis. Duis eu consectetur massa, non tristique orci.</p>
-
-            <section class="custom-read-more-container">
-                <button class="custom-glow-on-hover">Learn More</button>
-            </section>
-        </section>
-
-    </section>
-    <section class="image-wrapper-sl">
-        <img src="./Images/leopard-subsl.jpg" alt="Leopard">
-        <section class="content-container">
-            <h2>The Sri Lankan Leopard</h2>
-                <h3><i>Panthera pardus kotiya</i></h3>
-        <p id="p-sl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum turpis vitae orci rutrum, id volutpat mi ultrices. 
-            Praesent vitae mauris mollis, condimentum ipsum tincidunt, luctus sem. Etiam placerat ultrices consectetur. Donec nec aliquet justo. 
-            Nam blandit mollis justo, tincidunt iaculis mauris. Nullam in nunc sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-            Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi viverra imperdiet tortor, ac facilisis elit ultricies a. 
-            Phasellus porta semper purus, ac interdum odio varius sed. Fusce ut rutrum nunc. Nullam quis nibh et felis scelerisque dignissim. 
-            Ut interdum sollicitudin metus at bibendum. Curabitur aliquet vel lorem ac lobortis. Duis eu consectetur massa, non tristique orci.</p>
-
-            <section class="custom-read-more-container">
-                <button class="custom-glow-on-hover">Learn More</button>
-            </section>
-        </section>
-
-    </section>
-</section>
+</div>
 
 <!-- Parks Attached Links -->
 
-<h1 id="parks-link-title">Explore Sri Lanka's Breathtaking National Parks</h1>
+<div x-data="{
+    parks: [],
+    fetchParkData: async function() {
+        const response = await fetch('./animals_in_srilanka.json');
+        const data = await response.json();
+        this.parks = data.nationalParks;
+    }
+}" x-init="fetchParkData">
+    <h1 id="parks-link-title">Explore Sri Lanka's Breathtaking National Parks</h1>
 
-<section class="parks-container">
-    <section class="parks-link">
-        <img src="./Images/yala-sub.jpg" alt="Yala National Park">
-        <h2 id="park-title">Yala National Park</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros mauris, tempor vel tortor eget, faucibus tempor nibh. 
-            Morbi velit tortor, tincidunt eu sollicitudin sit amet, scelerisque vitae mi. Maecenas pretium feugiat leo, eu tempor ligula pretium a. 
-            Duis ac nisi mi. Pellentesque tristique volutpat erat, vel sollicitudin mauris feugiat sit amet. Phasellus tincidunt suscipit imperdiet.</p>
-
-            <section class="parks-btn">
-                <a href="./yala.html" class="parks-glow-btn">Visit Page</a>
+    <section class="parks-container">
+        <template x-for="park in parks" :key="park.id">
+            <section class="parks-link">
+                <img :src="park.image" :alt="park.alt">
+                <h2 x-text="park.name"></h2>
+                <p x-text="park.description"></p>
+                <section class="parks-btn">
+                    <a :href="park.link" class="parks-glow-btn">Visit Page</a>
+                </section>
             </section>
-
+        </template>
     </section>
-
-    <section class="parks-link">
-        <img src="./Images/wilpattu-sub.jpg" alt="Wilpattu National Park">
-        <h2 id="park-title">Wilpattu National Park</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros mauris, tempor vel tortor eget, faucibus tempor nibh. 
-            Morbi velit tortor, tincidunt eu sollicitudin sit amet, scelerisque vitae mi. Maecenas pretium feugiat leo, eu tempor ligula pretium a. 
-            Duis ac nisi mi. Pellentesque tristique volutpat erat, vel sollicitudin mauris feugiat sit amet. Phasellus tincidunt suscipit imperdiet.</p>
-
-            <section class="parks-btn">
-                <a href="./wilpattu.html" class="parks-glow-btn">Visit Page</a>
-            </section>            
-
-    </section>
-</section>
+</div>
 
 </main>
 
