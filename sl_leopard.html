@@ -69,17 +69,20 @@
 <!--- 3 Venues where leopards are found in Sri Lanka --->
 
 <div x-data="{
-    parks: [],
+    lpdparks: [],
     fetchParks: async function() {
         const response = await fetch('./leopard.json');
         const data = await response.json();
-        this.parks = data.parks;
+        this.lpdparks = data.leoparks;
+
+        // localStorage setItem()
+        localStorage.setItem('lpdparks', JSON.stringify(data.leoparks));
     }
 }" x-init="fetchParks">
     <section class="venues-notes">
         <h1>Wildlife Parks in Sri Lanka</h1>
         
-        <template x-for="park in parks" :key="park.id">
+        <template x-for="park in lpdparks" :key="park.id">
             <section>
                 <h1 x-text="park.name"></h1>
                 <section>

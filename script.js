@@ -40,6 +40,53 @@ bullets.forEach((bullet) => {
 
 /* Users Data JSON */
 
+document.addEventListener("DOMContentLoaded", function () {
+  const signUpForm = document.querySelector(".sign-up-form");
+  const signInForm = document.querySelector(".sign-in-form");
+
+  signUpForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const name = signUpForm.querySelector('input[type="text"]').value;
+    const email = signUpForm.querySelector('input[type="email"]').value;
+    const password = signUpForm.querySelector('input[type="password"]').value;
+
+    const userData = {
+      name: name,
+      email: email,
+      password: password,
+    };
+
+    localStorage.setItem("userData", JSON.stringify(userData));
+    signUpForm.reset();
+  });
+
+  signInForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const storedUserData = JSON.parse(localStorage.getItem("userData"));
+    const enteredEmail = signInForm.querySelector('input[type="text"]').value;
+    const enteredPassword = signInForm.querySelector('input[type="password"]').value;
+
+    // Checking if the entered email and password match the specific credentials
+    if (
+      enteredEmail === "aaquib@z-admin.com" && 
+      enteredPassword === "aaquib@admin"
+    ) {
+      // Redirect to the newsletter subscriptions page upon successful login
+      window.location.href = "newsletter_subscriptions.html";
+    } else if (
+      storedUserData &&
+      storedUserData.email === enteredEmail &&
+      storedUserData.password === enteredPassword
+    ) {
+      // Redirect to the index page if the stored credentials match the entered credentials
+      window.location.href = "index.html";
+    } else {
+      // Alert for invalid email or password
+      alert("Invalid email or password. Please try again.");
+    }
+    signInForm.reset();
+  });
+});
 
 
 /* Newsletter */
@@ -63,3 +110,16 @@ function newsletterForm() {
     }
   };
 }
+
+/* Newsletter Dashboard */
+
+document.addEventListener("DOMContentLoaded", function() {
+  const subscriptionsList = document.getElementById('subscriptions-list');
+  const subscriptions = JSON.parse(localStorage.getItem('subscriptions')) || [];
+  
+  subscriptions.forEach(function(subscription) {
+      const listItem = document.createElement('li');
+      listItem.textContent = subscription.email;
+      subscriptionsList.appendChild(listItem);
+  });
+});

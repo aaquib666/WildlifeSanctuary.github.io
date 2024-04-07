@@ -118,6 +118,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const data = await response.json();
         this.visionStatement = data.visionStatement;
         this.keyObjectives = data.keyObjectives;
+
+        // localStorage setItem()
+        localStorage.setItem('visionStatement', JSON.stringify(data.visionStatement));
+        localStorage.setItem('keyObjectives', JSON.stringify(data.keyObjectives));
     }
 }" x-init="fetchVisionData">
     <section>
@@ -143,6 +147,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const response = await fetch('./index.json');
         const data = await response.json();
         this.projects = data.projects;
+
+        // localStorage setItem()
+        localStorage.setItem('projects', JSON.stringify(data.projects));
     }
 }" x-init="fetchProjects">
     <section class="key-projects">

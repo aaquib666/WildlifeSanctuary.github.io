@@ -72,6 +72,9 @@
         const response = await fetch('./wilpattu.json');
         const data = await response.json();
         this.wilpattuData = data.wilpattu;
+
+        // localStorage setItem()
+        localStorage.setItem('wilpattuData', JSON.stringify(data.wilpattu));
     }
 }" x-init="fetchWilpattuData">
     <section class="history">
@@ -97,11 +100,14 @@
 </section>
 
 <div x-data="{
-    animals: [],
+    wilanimals: [],
     fetchAnimals: async function() {
         const response = await fetch('./wilpattu.json');
         const data = await response.json();
         this.animals = data.animals;
+
+        // localStorage setItem()
+        localStorage.setItem('wilanimals', JSON.stringify(data.animals));
     }
 }" x-init="fetchAnimals">
     <section class="main-animalbox">

@@ -73,7 +73,10 @@
     fetchAboutUsData: async function() {
         const response = await fetch('./department.json');
         const data = await response.json();
-        this.aboutUs = data.aboutUs;
+        this.aboutUs = data.aboutUs0;
+
+        // localStorage setItem()
+        localStorage.setItem('aboutUs', JSON.stringify(data.aboutUs0));
     }
 }" x-init="fetchAboutUsData">
     <section class="main-aboutus">

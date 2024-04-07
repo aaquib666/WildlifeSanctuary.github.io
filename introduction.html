@@ -72,6 +72,9 @@
         const response = await fetch('./introduction.json');
         const data = await response.json();
         this.otherWildlifeParks = data.otherWildlifeParks;
+
+        // localStorage setItem()
+        localStorage.setItem('otherWildlifeParks', JSON.stringify(data.otherWildlifeParks));
     }
 }" x-init="fetchOtherWildlifeParksData">
     <h1 id="main-t-intro" x-text="otherWildlifeParks.title"></h1>
@@ -86,6 +89,9 @@
         const response = await fetch('./introduction.json');
         const data = await response.json();
         this.parkSection1 = data.parkSection1;
+
+        // localStorage setItem()
+        localStorage.setItem('parkSection1', JSON.stringify(data.parkSection1));
     }
 }" x-init="fetchParkSection1Data">
     <section class="park-section1">
@@ -110,6 +116,9 @@
         const response = await fetch('./introduction.json');
         const data = await response.json();
         this.parkSection2 = data.parkSection2;
+
+        // localStorage setItem()
+        localStorage.setItem('parkSection2', JSON.stringify(data.parkSection2));
     }
 }" x-init="fetchParkSection2Data">
     <section class="park-section2">
@@ -134,6 +143,9 @@
         const response = await fetch('./introduction.json');
         const data = await response.json();
         this.parkSection3 = data.parkSection3;
+
+        // localStorage setItem()
+        localStorage.setItem('parkSection3', JSON.stringify(data.parkSection3));
     }
 }" x-init="fetchParkSection3Data">
     <section class="park-section3">

@@ -74,6 +74,9 @@
         const response = await fetch('./animals_in_srilanka.json');
         const data = await response.json();
         this.animals = data.indigenousAnimals;
+
+        // localStorage setItem()
+        localStorage.setItem('animals', JSON.stringify(data.indigenousAnimals));
     }
 }" x-init="fetchAnimalData">
     <h1 id="sl-title">Indigenous Animals in Sri Lanka</h1>
@@ -103,6 +106,9 @@
         const response = await fetch('./animals_in_srilanka.json');
         const data = await response.json();
         this.parks = data.nationalParks;
+
+        // localStorage setItem()
+        localStorage.setItem('parks', JSON.stringify(data.nationalParks));
     }
 }" x-init="fetchParkData">
     <h1 id="parks-link-title">Explore Sri Lanka's Breathtaking National Parks</h1>
