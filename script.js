@@ -123,3 +123,8 @@ document.addEventListener("DOMContentLoaded", function() {
       subscriptionsList.appendChild(listItem);
   });
 });
+
+/* NWS Dashboard Redirect Button */
+document.getElementById("redirect-btn").addEventListener("click", function() {
+  window.location.href = "signup.html";
+  });
