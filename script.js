@@ -88,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 /* Newsletter */
 
 function newsletterForm() {
@@ -120,6 +119,26 @@ document.addEventListener("DOMContentLoaded", function() {
   subscriptions.forEach(function(subscription) {
       const listItem = document.createElement('li');
       listItem.textContent = subscription.email;
+
+      // Create a button to remove the email
+      const removeButton = document.createElement('button');
+      removeButton.textContent = 'REMOVE';
+      removeButton.className = 'remove-button';
+      removeButton.style.marginLeft = '30px';
+      removeButton.addEventListener('click', function() {
+          // Remove the email from the list and update localStorage
+          const index = subscriptions.indexOf(subscription);
+          if (index !== -1) {
+              subscriptions.splice(index, 1);
+              localStorage.setItem('subscriptions', JSON.stringify(subscriptions));
+              subscriptionsList.removeChild(listItem);
+          }
+      });
+
+      // Append the remove button to the list item
+      listItem.appendChild(removeButton);
+
+      // Append the list item to the subscriptions list
       subscriptionsList.appendChild(listItem);
   });
 });
