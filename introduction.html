@@ -68,35 +68,63 @@
 
 <div x-data="{
     otherWildlifeParks: {},
+    editingOtherWildlifeParks: false,
     fetchOtherWildlifeParksData: async function() {
         const response = await fetch('./introduction.json');
         const data = await response.json();
         this.otherWildlifeParks = data.otherWildlifeParks;
-
-        // localStorage setItem()
-        localStorage.setItem('otherWildlifeParks', JSON.stringify(data.otherWildlifeParks));
+        // Retrieve data from local storage if available
+        const storedOtherWildlifeParks = localStorage.getItem('otherWildlifeParks');
+        if (storedOtherWildlifeParks) {
+            this.otherWildlifeParks = JSON.parse(storedOtherWildlifeParks);
+        }
+    },
+    editOtherWildlifeParks: function() {
+        this.editingOtherWildlifeParks = true;
+    },
+    saveOtherWildlifeParks: function() {
+        localStorage.setItem('otherWildlifeParks', JSON.stringify(this.otherWildlifeParks));
+        this.editingOtherWildlifeParks = false;
     }
 }" x-init="fetchOtherWildlifeParksData">
-    <h1 id="main-t-intro" x-text="otherWildlifeParks.title"></h1>
-    <p id="main-t-p" x-text="otherWildlifeParks.content"></p>
+    <h1 id="main-t-intro" x-text="otherWildlifeParks.title" x-show="!editingOtherWildlifeParks"></h1>
+    <textarea id="main-t-intro" x-model="otherWildlifeParks.title" x-show="editingOtherWildlifeParks"></textarea>
+    <p id="main-t-p" x-text="otherWildlifeParks.content" x-show="!editingOtherWildlifeParks"></p>
+    <textarea id="main-t-p" x-model="otherWildlifeParks.content" x-show="editingOtherWildlifeParks"></textarea>
+    <button @click="editOtherWildlifeParks" x-show="!editingOtherWildlifeParks">Edit</button>
+    <button @click="saveOtherWildlifeParks" x-show="editingOtherWildlifeParks">Save</button>
 </div>
 
 <!-- Parks Section -->
 
+<!--- Park 01 --->
 <div x-data="{
     parkSection1: {},
+    editingParkSection1: false,
     fetchParkSection1Data: async function() {
         const response = await fetch('./introduction.json');
         const data = await response.json();
         this.parkSection1 = data.parkSection1;
-
-        // localStorage setItem()
-        localStorage.setItem('parkSection1', JSON.stringify(data.parkSection1));
+        // Retrieve data from local storage if available
+        const storedParkSection1 = localStorage.getItem('parkSection1');
+        if (storedParkSection1) {
+            this.parkSection1 = JSON.parse(storedParkSection1);
+        }
+    },
+    editParkSection1: function() {
+        this.editingParkSection1 = true;
+    },
+    saveParkSection1: function() {
+        localStorage.setItem('parkSection1', JSON.stringify(this.parkSection1));
+        this.editingParkSection1 = false;
     }
 }" x-init="fetchParkSection1Data">
     <section class="park-section1">
-        <h2 id="park1-title" x-text="parkSection1.title"></h2>
-        <p class="park-description1" x-html="parkSection1.description"></p>
+        <h2 id="park1-title" x-text="parkSection1.title" x-show="!editingParkSection1"></h2>
+        <textarea id="park1-title" x-model="parkSection1.title" x-show="editingParkSection1"></textarea>
+        
+        <p class="park-description1" x-html="parkSection1.description" x-show="!editingParkSection1"></p>
+        <textarea class="park-description1" x-model="parkSection1.description" x-show="editingParkSection1"></textarea>
 
         <section class="map-container1">
             <iframe x-bind:src="parkSection1.mapSrc" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -106,24 +134,41 @@
             <template x-for="image in parkSection1.images" :key="image.id">
                 <img :src="image.src" :alt="image.alt">
             </template>
-        </section>
+        </section>        
+
+        <button @click="editParkSection1" x-show="!editingParkSection1">Edit</button>
+        <button @click="saveParkSection1" x-show="editingParkSection1">Save</button>
     </section>
 </div>
 
+<!--- Park 02 --->
 <div x-data="{
     parkSection2: {},
+    editingParkSection2: false,
     fetchParkSection2Data: async function() {
         const response = await fetch('./introduction.json');
         const data = await response.json();
         this.parkSection2 = data.parkSection2;
-
-        // localStorage setItem()
-        localStorage.setItem('parkSection2', JSON.stringify(data.parkSection2));
+        // Retrieve data from local storage if available
+        const storedParkSection2 = localStorage.getItem('parkSection2');
+        if (storedParkSection2) {
+            this.parkSection2 = JSON.parse(storedParkSection2);
+        }
+    },
+    editParkSection2: function() {
+        this.editingParkSection2 = true;
+    },
+    saveParkSection2: function() {
+        localStorage.setItem('parkSection2', JSON.stringify(this.parkSection2));
+        this.editingParkSection2 = false;
     }
 }" x-init="fetchParkSection2Data">
     <section class="park-section2">
-        <h2 id="park2-title" x-text="parkSection2.title"></h2>
-        <p class="park-description2" x-html="parkSection2.description"></p>
+        <h2 id="park2-title" x-text="parkSection2.title" x-show="!editingParkSection2"></h2>
+        <textarea id="park2-title" x-model="parkSection2.title" x-show="editingParkSection2"></textarea>
+        
+        <p class="park-description2" x-html="parkSection2.description" x-show="!editingParkSection2"></p>
+        <textarea class="park-description2" x-model="parkSection2.description" x-show="editingParkSection2"></textarea>
 
         <section class="map-container2">
             <iframe x-bind:src="parkSection2.mapSrc" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -134,23 +179,40 @@
                 <img :src="image.src" :alt="image.alt">
             </template>
         </section>        
+
+        <button @click="editParkSection2" x-show="!editingParkSection2">Edit</button>
+        <button @click="saveParkSection2" x-show="editingParkSection2">Save</button>
     </section>
 </div>
 
+<!--- Park 03 --->
 <div x-data="{
     parkSection3: {},
+    editingParkSection3: false,
     fetchParkSection3Data: async function() {
         const response = await fetch('./introduction.json');
         const data = await response.json();
         this.parkSection3 = data.parkSection3;
-
-        // localStorage setItem()
-        localStorage.setItem('parkSection3', JSON.stringify(data.parkSection3));
+        // Retrieve data from local storage if available
+        const storedParkSection3 = localStorage.getItem('parkSection3');
+        if (storedParkSection3) {
+            this.parkSection3 = JSON.parse(storedParkSection3);
+        }
+    },
+    editParkSection3: function() {
+        this.editingParkSection3 = true;
+    },
+    saveParkSection3: function() {
+        localStorage.setItem('parkSection3', JSON.stringify(this.parkSection3));
+        this.editingParkSection3 = false;
     }
 }" x-init="fetchParkSection3Data">
     <section class="park-section3">
-        <h2 id="park3-title" x-text="parkSection3.title"></h2>
-        <p class="park-description3" x-html="parkSection3.description"></p>
+        <h2 id="park3-title" x-text="parkSection3.title" x-show="!editingParkSection3"></h2>
+        <textarea id="park3-title" x-model="parkSection3.title" x-show="editingParkSection3"></textarea>
+        
+        <p class="park-description3" x-html="parkSection3.description" x-show="!editingParkSection3"></p>
+        <textarea class="park-description3" x-model="parkSection3.description" x-show="editingParkSection3"></textarea>
 
         <section class="map-container3">
             <iframe x-bind:src="parkSection3.mapSrc" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -160,7 +222,10 @@
             <template x-for="image in parkSection3.images" :key="image.id">
                 <img :src="image.src" :alt="image.alt">
             </template>
-        </section>                
+        </section>        
+
+        <button @click="editParkSection3" x-show="!editingParkSection3">Edit</button>
+        <button @click="saveParkSection3" x-show="editingParkSection3">Save</button>
     </section>
 </div>
 
