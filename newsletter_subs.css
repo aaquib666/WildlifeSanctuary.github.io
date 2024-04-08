@@ -64,10 +64,21 @@ li {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 #redirect-btn:hover {
     background-color: #0056b3;
 }
 
+.remove-button {
+    background-color: #ff6666;
+    color: #000000; 
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.remove-button:hover {
+    background-color: #ff4d4d;
+}

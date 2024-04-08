@@ -67,27 +67,43 @@
 </section>
 
 <div x-data="{
-    yalaData: [],
+    yalaData: {},
+    editingYala: false,
     fetchYalaData: async function() {
         const response = await fetch('./yala.json');
         const data = await response.json();
         this.yalaData = data.yala;
-
-        // localStorage setItem()
-        localStorage.setItem('yalaData', JSON.stringify(data.yala));
+        // Retrieve data from local storage if available
+        const storedYalaData = localStorage.getItem('yalaData');
+        if (storedYalaData) {
+            this.yalaData = JSON.parse(storedYalaData);
+        }
+    },
+    editYala: function() {
+        this.editingYala = true;
+    },
+    saveYala: function() {
+        localStorage.setItem('yalaData', JSON.stringify(this.yalaData));
+        this.editingYala = false;
     }
 }" x-init="fetchYalaData">
     <section class="history">
-        <h1 id="yala-title" x-text="yalaData.title"></h1>
+        <h1 id="yala-title" x-text="yalaData.title" x-show="!editingYala"></h1>
+        <textarea id="yala-title" x-model="yalaData.title" x-show="editingYala"></textarea>
          
-        <p id="yala-history-p" x-text="yalaData.description"></p>
+        <p id="yala-history-p" x-text="yalaData.description" x-show="!editingYala"></p>
+        <textarea id="yala-history-p" x-model="yalaData.description" x-show="editingYala"></textarea>
 
-        <ul>
+        <ul x-show="!editingYala">
             <template x-for="(item, index) in yalaData.info" :key="index">
                 <li x-html="item"></li>
                 <br>
             </template>
         </ul>
+        <textarea x-model="yalaData.info" x-show="editingYala"></textarea>
+
+        <button @click="editYala" x-show="!editingYala">Edit</button>
+        <button @click="saveYala" x-show="editingYala">Save</button>
     </section>
 </div>
 
@@ -101,23 +117,38 @@
 
 <div x-data="{
     yalanimals: [],
+    editingAnimals: false,
     fetchAnimals: async function() {
         const response = await fetch('./yala.json');
         const data = await response.json();
-        this.animals = data.animals;
-
-        // localStorage setItem()
-        localStorage.setItem('yalanimals', JSON.stringify(data.animals));
+        this.yalanimals = data.animals;
+        // Retrieve data from local storage if available
+        const storedAnimals = localStorage.getItem('yalanimals');
+        if (storedAnimals) {
+            this.yalanimals = JSON.parse(storedAnimals);
+        }
+    },
+    editAnimals: function() {
+        this.editingAnimals = true;
+    },
+    saveAnimals: function() {
+        localStorage.setItem('yalanimals', JSON.stringify(this.yalanimals));
+        this.editingAnimals = false;
     }
 }" x-init="fetchAnimals">
     <section class="main-animalbox">
-        <template x-for="animal in animals" :key="animal.id">
+        <template x-for="animal in yalanimals" :key="animal.id">
             <section class="animal-box">
-                <h2 x-text="animal.name"></h2>
-                <i x-text="animal.scientificName"></i>
-                <p x-text="animal.description"></p>
+                <h2 x-text="animal.name" x-show="!editingAnimals"></h2>
+                <textarea x-model="animal.name" x-show="editingAnimals"></textarea>
+                <i x-text="animal.scientificName" x-show="!editingAnimals"></i>
+                <textarea x-model="animal.scientificName" x-show="editingAnimals"></textarea>
+                <p x-text="animal.description" x-show="!editingAnimals"></p>
+                <textarea x-model="animal.description" x-show="editingAnimals"></textarea>
             </section>
         </template>
+        <button @click="editAnimals" x-show="!editingAnimals">Edit</button>
+        <button @click="saveAnimals" x-show="editingAnimals">Save</button>
     </section>
 </div>
 

@@ -70,13 +70,23 @@
 
 <div x-data="{
     animals: [],
+    editingAnimals: false,
     fetchAnimalData: async function() {
         const response = await fetch('./animals_in_srilanka.json');
         const data = await response.json();
         this.animals = data.indigenousAnimals;
-
-        // localStorage setItem()
-        localStorage.setItem('animals', JSON.stringify(data.indigenousAnimals));
+        // Retrieve data from local storage if available
+        const storedAnimals = localStorage.getItem('animals');
+        if (storedAnimals) {
+            this.animals = JSON.parse(storedAnimals);
+        }
+    },
+    editAnimals: function() {
+        this.editingAnimals = true;
+    },
+    saveAnimals: function() {
+        localStorage.setItem('animals', JSON.stringify(this.animals));
+        this.editingAnimals = false;
     }
 }" x-init="fetchAnimalData">
     <h1 id="sl-title">Indigenous Animals in Sri Lanka</h1>
@@ -88,9 +98,11 @@
                 <section class="content-container">
                     <h2 x-text="animal.name"></h2>
                     <h3><i x-text="animal.scientificName"></i></h3>
-                    <p x-text="animal.description"></p>
+                    <p x-text="animal.description" x-show="!editingAnimals"></p>
+                    <textarea x-model="animal.description" x-show="editingAnimals"></textarea>
                     <section class="custom-read-more-container">
-                        <button class="custom-glow-on-hover">Learn More</button>
+                        <button class="custom-glow-on-hover" @click="editAnimals" x-show="!editingAnimals">Edit</button>
+                        <button class="custom-glow-on-hover" @click="saveAnimals" x-show="editingAnimals">Save</button>
                     </section>
                 </section>
             </section>
@@ -98,17 +110,28 @@
     </section>
 </div>
 
+
 <!-- Parks Attached Links -->
 
 <div x-data="{
     parks: [],
+    editingParks: false,
     fetchParkData: async function() {
         const response = await fetch('./animals_in_srilanka.json');
         const data = await response.json();
         this.parks = data.nationalParks;
-
-        // localStorage setItem()
-        localStorage.setItem('parks', JSON.stringify(data.nationalParks));
+        // Retrieve data from local storage if available
+        const storedParks = localStorage.getItem('parks');
+        if (storedParks) {
+            this.parks = JSON.parse(storedParks);
+        }
+    },
+    editParks: function() {
+        this.editingParks = true;
+    },
+    saveParks: function() {
+        localStorage.setItem('parks', JSON.stringify(this.parks));
+        this.editingParks = false;
     }
 }" x-init="fetchParkData">
     <h1 id="parks-link-title">Explore Sri Lanka's Breathtaking National Parks</h1>
@@ -118,12 +141,15 @@
             <section class="parks-link">
                 <img :src="park.image" :alt="park.alt">
                 <h2 x-text="park.name"></h2>
-                <p x-text="park.description"></p>
+                <p x-text="park.description" x-show="!editingParks"></p>
+                <textarea x-model="park.description" x-show="editingParks"></textarea>
                 <section class="parks-btn">
                     <a :href="park.link" class="parks-glow-btn">Visit Page</a>
                 </section>
             </section>
         </template>
+        <button class="custom-glow-on-hover" @click="editParks" x-show="!editingParks">Edit</button>
+        <button class="custom-glow-on-hover" @click="saveParks" x-show="editingParks">Save</button>
     </section>
 </div>
 

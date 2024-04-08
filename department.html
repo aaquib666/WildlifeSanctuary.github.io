@@ -70,18 +70,31 @@
 
 <div x-data="{
     aboutUs: {},
+    editingAboutUs: false,
     fetchAboutUsData: async function() {
         const response = await fetch('./department.json');
         const data = await response.json();
         this.aboutUs = data.aboutUs0;
-
-        // localStorage setItem()
-        localStorage.setItem('aboutUs', JSON.stringify(data.aboutUs0));
+        // Retrieve data from local storage if available
+        const storedAboutUs = localStorage.getItem('aboutUs');
+        if (storedAboutUs) {
+            this.aboutUs = JSON.parse(storedAboutUs);
+        }
+    },
+    editAboutUs: function() {
+        this.editingAboutUs = true;
+    },
+    saveAboutUs: function() {
+        localStorage.setItem('aboutUs', JSON.stringify(this.aboutUs));
+        this.editingAboutUs = false;
     }
 }" x-init="fetchAboutUsData">
     <section class="main-aboutus">
         <h1>About Us</h1>
-        <p x-text="aboutUs.content"></p>
+        <p x-text="aboutUs.content" x-show="!editingAboutUs"></p>
+        <textarea x-model="aboutUs.content" x-show="editingAboutUs"></textarea>
+        <button @click="editAboutUs" x-show="!editingAboutUs">Edit</button>
+        <button @click="saveAboutUs" x-show="editingAboutUs">Save</button>
     </section>
 </div>
 

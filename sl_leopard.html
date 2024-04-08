@@ -70,13 +70,23 @@
 
 <div x-data="{
     lpdparks: [],
+    editingParks: false,
     fetchParks: async function() {
         const response = await fetch('./leopard.json');
         const data = await response.json();
         this.lpdparks = data.leoparks;
-
-        // localStorage setItem()
-        localStorage.setItem('lpdparks', JSON.stringify(data.leoparks));
+        // Retrieve data from local storage if available
+        const storedParks = localStorage.getItem('lpdparks');
+        if (storedParks) {
+            this.lpdparks = JSON.parse(storedParks);
+        }
+    },
+    editParks: function() {
+        this.editingParks = true;
+    },
+    saveParks: function() {
+        localStorage.setItem('lpdparks', JSON.stringify(this.lpdparks));
+        this.editingParks = false;
     }
 }" x-init="fetchParks">
     <section class="venues-notes">
@@ -84,12 +94,16 @@
         
         <template x-for="park in lpdparks" :key="park.id">
             <section>
-                <h1 x-text="park.name"></h1>
+                <h1 x-text="park.name" x-show="!editingParks"></h1>
+                <textarea x-model="park.name" x-show="editingParks"></textarea>
                 <section>
-                    <p x-text="park.description"></p>
+                    <p x-text="park.description" x-show="!editingParks"></p>
+                    <textarea x-model="park.description" x-show="editingParks"></textarea>
                 </section>
             </section>
         </template>
+        <button @click="editParks" x-show="!editingParks">Edit</button>
+        <button @click="saveParks" x-show="editingParks">Save</button>
     </section>
 </div>
 

@@ -112,30 +112,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div x-data="{
     visionStatement: {},
+    editingVision: false,
     keyObjectives: [],
     fetchVisionData: async function() {
         const response = await fetch('./index.json');
         const data = await response.json();
         this.visionStatement = data.visionStatement;
         this.keyObjectives = data.keyObjectives;
-
-        // localStorage setItem()
-        localStorage.setItem('visionStatement', JSON.stringify(data.visionStatement));
-        localStorage.setItem('keyObjectives', JSON.stringify(data.keyObjectives));
+        // Retrieve data from local storage if available
+        const storedVisionStatement = localStorage.getItem('visionStatement');
+        if (storedVisionStatement) {
+            this.visionStatement = JSON.parse(storedVisionStatement);
+        }
+    },
+    editVision: function() {
+        this.editingVision = true;
+    },
+    saveVision: function() {
+        localStorage.setItem('visionStatement', JSON.stringify(this.visionStatement));
+        this.editingVision = false;
     }
 }" x-init="fetchVisionData">
     <section>
         <h2 x-text="visionStatement.title"></h2>
-        <p x-text="visionStatement.description"></p>
-    </section>
-
-    <section class="vision-state">
-        <h2>Key Objectives</h2>
-        <ul>
-            <template x-for="objective in keyObjectives" :key="objective.id">
-                <li x-text="objective.description"></li>
-            </template>
-        </ul>
+        <p x-text="visionStatement.description" x-show="!editingVision"></p>
+        <textarea x-model="visionStatement.description" x-show="editingVision"></textarea>
+        <button x-show="!editingVision" @click="editVision">Edit</button>
+        <button x-show="editingVision" @click="saveVision">Save</button>
     </section>
 </div>
 
@@ -143,27 +146,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div x-data="{
     projects: [],
+    editingProjects: false,
     fetchProjects: async function() {
         const response = await fetch('./index.json');
         const data = await response.json();
         this.projects = data.projects;
-
-        // localStorage setItem()
-        localStorage.setItem('projects', JSON.stringify(data.projects));
+        // Retrieve data from local storage if available
+        const storedProjects = localStorage.getItem('projects');
+        if (storedProjects) {
+            this.projects = JSON.parse(storedProjects);
+        }
+    },
+    editProjects: function() {
+        this.editingProjects = true;
+    },
+    saveProjects: function() {
+        localStorage.setItem('projects', JSON.stringify(this.projects));
+        this.editingProjects = false;
     }
 }" x-init="fetchProjects">
     <section class="key-projects">
         <h1>Key Projects Done by Us;</h1>
-        
         <section class="project-container">
             <template x-for="project in projects" :key="project.id">
                 <section class="project">
                     <img :src="project.image" :alt="project.alt">
                     <h2 x-text="project.name"></h2>
-                    <p x-text="project.description"></p>
+                    <p x-text="project.description" x-show="!editingProjects"></p>
+                    <textarea x-model="project.description" x-show="editingProjects"></textarea>
                 </section>
             </template>
         </section>
+        <button x-show="!editingProjects" @click="editProjects">Edit</button>
+        <button x-show="editingProjects" @click="saveProjects">Save</button>
     </section>
 </div>
 
