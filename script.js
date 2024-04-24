@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Checking if the entered email and password match the specific credentials
     if (
-      enteredEmail === "aaquib@z-admin.com" && 
+      enteredEmail === "aaquib@admin.com" && 
       enteredPassword === "aaquib@admin"
     ) {
       // Redirect to the newsletter subscriptions page upon successful login
